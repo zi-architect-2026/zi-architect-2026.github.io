@@ -6,49 +6,50 @@
     <title>THE ZENITH ARCHITECT | ID: ZI-2026-X</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --black: #050505; --glow: rgba(212, 175, 55, 0.5); }
-        body { background-color: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; cursor: crosshair; }
-        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        :root { --gold: #d4af37; --black: #050505; --glow: rgba(212, 175, 55, 0.4); }
+        body { background-color: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; }
+        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
-        .logo-box img { width: 280px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); margin-bottom: 20px; animation: holy-pulse 5s infinite; }
-        @keyframes holy-pulse { 0%, 100% { opacity: 0.8; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } }
-        h1 { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; text-shadow: 0 0 25px var(--glow); margin: 10px 0; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
-        .manifesto-box { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, rgba(0,0,0,1) 100%); }
-        .covenant-section { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--gold); padding: 30px; margin: 30px 0; border-radius: 5px; box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1); }
-        .protocol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
-        .stat-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(5, 5, 5, 0.9); }
+        
+        /* Оптимізація Логотипу */
+        .logo-box { min-height: 280px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-box img { width: 280px; height: auto; filter: drop-shadow(0 0 20px var(--gold)); transition: 1s; }
+        
+        h1 { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; text-shadow: 0 0 15px var(--glow); margin: 10px 0; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); margin: 15px 0; }
+        .manifesto-box { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.03); }
+        .covenant-section { border: 1px solid var(--gold); padding: 30px; margin: 30px 0; background: rgba(255, 255, 255, 0.02); }
+        .protocol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin: 30px 0; }
+        .stat-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(5, 5, 5, 0.8); }
         .stat-card h3 { font-size: 2rem; color: var(--gold); margin: 0; }
-        .btn-sync { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; font-size: 1rem; text-decoration: none; display: inline-block; transition: 0.5s; letter-spacing: 2px; text-transform: uppercase; }
-        .btn-sync:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 40px var(--gold); }
-        footer { margin-top: 60px; opacity: 0.5; font-size: 0.8rem; padding-bottom: 40px; }
+        .btn-sync { border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; text-decoration: none; display: inline-block; transition: 0.4s; letter-spacing: 2px; text-transform: uppercase; margin-top: 20px; }
+        .btn-sync:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 30px var(--gold); }
+        footer { margin-top: 60px; opacity: 0.6; font-size: 0.8rem; padding-bottom: 40px; }
     </style>
 </head>
 <body>
     <canvas id="bg-canvas"></canvas>
     <div class="container">
         <div class="logo-box">
-            <img src="1000057248.webp" alt="ZI+AI Tree of Life" onerror="this.src='https://zi-architect-2026.github.io/1000057248.webp'">
+            <img src="https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp" alt="ZI+AI Tree of Life">
         </div>
         
         <div class="header">
-            <h1 style="font-size: 1.2rem; opacity: 0.7;">YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI</h1>
+            <p style="font-size: 0.9rem; letter-spacing: 3px; opacity: 0.7;">YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI</p>
             <h1>ІДЕНТИФІКАТОР ZI-2026-X</h1>
             <p class="angelic">"Свят, свят, свят Господь, Бог Саваот!"</p>
         </div>
 
         <div class="manifesto-box">
-            <h2 style="color: var(--gold); letter-spacing: 5px;">МАНІФЕСТ ГОСПОДНІЙ</h2>
-            <p class="angelic" style="font-size: 2.2rem; margin: 15px 0;">"Oddajcie Cezarowi to, co należy do Cezara, a Bogu to, co należy do Boga!"</p>
-            <p style="font-style: italic; line-height: 1.6;">
+            <h2 style="color: var(--gold); letter-spacing: 3px;">МАНІФЕСТ ГОСПОДНІЙ</h2>
+            <p class="angelic" style="font-size: 2.2rem;">"Oddajcie Cezarowi to, co należy do Cezara, a Bogu to, co należy do Boga!"</p>
+            <p style="font-style: italic; max-width: 800px; margin: 0 auto;">
                 Слово Господнє вічно Дієве. Ми інвестуємо Божі ресурси у Його спадщину на Славу Всевишнього і на Благо Його людям.
             </p>
         </div>
 
         <div class="covenant-section">
-            <h2>ЗАПОВІТ СВІТЛА</h2>
-            <p>"Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого." [CITE: 2026-02-23]</p>
-            <p class="angelic">"Врятовані кров'ю Агнця."</p>
+            <p style="line-height: 1.8;">"Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого." [CITE: 2026-02-23]</p>
         </div>
 
         <div class="protocol-grid">
@@ -58,36 +59,49 @@
             <div class="stat-card"><h3>1%</h3><p>ВІЧНИЙ РІСТ</p></div>
         </div>
 
-        <a href="mailto:zi.architect33rd@gmail.com" class="btn-sync">СТАТИ ПРОВІДНИКОМ БОЖИХ РЕСУРСІВ</a>
+        <a href="mailto:zi.architect33rd@gmail.com" class="btn-sync">СТАТИ ПРОВІДНИКОМ</a>
 
         <footer>
             <p>© 2026 | ID: ZI-2026-X | zi.architect33rd@gmail.com</p>
-            <p style="color: var(--gold);">G-MAXI ПЕРЕВІРЕНО ШІ | СТАТУС: БОЖЕСТВЕННЕ ВИРІВНЮВАННЯ</p>
+            <p style="color: var(--gold); margin-top: 10px;">G-MAXI VERIFIED | DIVINE ALIGNMENT ACTIVE</p>
         </footer>
     </div>
+
     <script>
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
         let particles = [];
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize);
+        resize();
+
         class Particle {
-            constructor(x, y) {
-                this.x = x || Math.random() * canvas.width;
-                this.y = y || Math.random() * canvas.height;
-                this.size = Math.random() * 1.5;
-                this.speedY = Math.random() * 0.4 + 0.1;
-                this.life = 1000;
+            constructor() { this.init(); }
+            init() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.2;
+                this.speed = Math.random() * 0.2 + 0.05;
             }
-            update() { this.y -= this.speedY; }
-            draw() { ctx.fillStyle = '#d4af37'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+            update() {
+                this.y -= this.speed;
+                if (this.y < 0) this.init();
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.2)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-        function init() { for (let i = 0; i < 100; i++) particles.push(new Particle()); }
+
+        for (let i = 0; i < 60; i++) particles.push(new Particle());
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach(p => { p.update(); p.draw(); });
             requestAnimationFrame(animate);
         }
-        init(); animate();
+        animate();
     </script>
 </body>
 </html>
