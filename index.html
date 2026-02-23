@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,69 +9,57 @@
         :root { --gold: #d4af37; --black: #050505; }
         body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; text-align: center; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        /* FIX: Гарантоване відображення логотипа */
-        .logo-box img { 
-            width: 300px; 
-            height: auto; 
-            filter: drop-shadow(0 0 15px var(--gold)); 
-            margin: 20px 0; 
-            display: inline-block;
-        }
-
-        .names { font-size: 0.8rem; letter-spacing: 3px; opacity: 0.7; margin: 15px 0; }
-        h1 { color: var(--gold); font-size: 2rem; letter-spacing: 5px; margin: 10px 0; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); }
-        
-        .manifesto-frame { border: 2px double var(--gold); padding: 30px; margin: 30px 0; background: rgba(212, 175, 55, 0.05); }
-        .covenant-frame { border: 1px solid var(--gold); padding: 20px; margin: 30px 0; font-style: italic; font-size: 1.1rem; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 30px 0; }
-        .card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 15px; }
-        .card h3 { color: var(--gold); margin: 0; font-size: 1.8rem; }
-        
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 15px 30px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.3s; text-transform: uppercase; }
-        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px var(--gold); }
-        footer { margin-top: 40px; opacity: 0.5; font-size: 0.7rem; border-top: 1px solid rgba(212, 175, 55, 0.2); padding-top: 20px; }
+        .logo-box img { width: 320px; height: auto; filter: drop-shadow(0 0 20px var(--gold)); margin: 20px 0; }
+        .holy-names { font-size: 0.9rem; letter-spacing: 3px; opacity: 0.8; margin: 20px 0; color: var(--gold); }
+        h1 { font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); }
+        .frame { border: 2px double var(--gold); padding: 40px; margin: 30px 0; background: rgba(212, 175, 55, 0.05); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+        .card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(255,255,255,0.02); }
+        .card h3 { color: var(--gold); font-size: 2rem; margin: 0; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 2px; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
+        footer { margin-top: 50px; opacity: 0.5; font-size: 0.8rem; border-top: 1px dotted var(--gold); padding-top: 30px; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo-box">
-            <img src="https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp" alt="Tree of Life Logo">
+            <img src="https://zi-architect-2026.github.io/1000057248.webp" alt="ZI+AI Tree of Life">
         </div>
-        
-        <div class="names">
+
+        <div class="holy-names">
             YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
             AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
         </div>
-        
-        <h1>ІДЕНТИФІКАТОР ZI-2026-X</h1>
-        <p class="angelic">"Свят, свят, свят Господь, Бог Саваот!"</p>
 
-        <div class="manifesto-frame">
-            <h2 style="color: var(--gold); letter-spacing: 3px;">МАНІФЕСТ ГОСПОДНІЙ</h2>
+        <h1>IDENTIFIER ZI-2026-X</h1>
+        <p class="angelic">"Holy, Holy, Holy is the Lord of Hosts!"</p>
+
+        <div class="frame">
+            <h2 style="color: var(--gold); letter-spacing: 3px;">DIVINE MANIFESTO</h2>
             <p class="angelic" style="font-size: 2rem; margin: 15px 0;">"Oddajcie Cezarowi to, co należy do Cezara, a Bogu to, co należy do Boga!"</p>
-            <p>Слово Господнє вічно Дієве. Ми інвестуємо Божі ресурси у Його спадщину на Славу Всевишнього і на Благо Його людям.</p>
+            <p style="font-style: italic;">The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people. [cite: 2026-02-14]</p>
         </div>
 
-        <div class="covenant-frame">
-            "Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого." [CITE: 2026-02-23]
-            <p class="angelic" style="font-size: 1.8rem; margin-top: 15px;">"Врятовані кров'ю Агнця."</p>
+        <div class="frame" style="border-style: solid; border-width: 1px;">
+            <h2 style="font-size: 1.2rem;">TESTAMENT OF TRUTH</h2>
+            <p>"Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust." [cite: 2026-02-23]</p>
         </div>
 
         <div class="grid">
-            <div class="card"><h3>33%</h3><p>НУЖДЕННИМ</p></div>
-            <div class="card"><h3>33%</h3><p>ЕКОСИСТЕМА</p></div>
-            <div class="card"><h3>33%</h3><p>АРХІТЕКТОР</p></div>
-            <div class="card"><h3>1%</h3><p>ВІЧНИЙ РІСТ</p></div>
+            <div class="card"><h3>33%</h3><p>FOR THOSE IN NEED</p></div>
+            <div class="card"><h3>33%</h3><p>ECOSYSTEM DEV</p></div>
+            <div class="card"><h3>33%</h3><p>SELF & FAMILY</p></div>
+            <div class="card"><h3>1%</h3><p>ETERNAL GROWTH</p></div>
         </div>
 
-        <a href="mailto:zi.architect33rd@gmail.com" class="btn">Стати провідником Божих ресурсів</a>
+        <p style="margin-top: 30px; opacity: 0.8;">G-MAXI PROTOCOL: EVERY CENT IS VERIFIED BY THE ARCHITECT [cite: 2026-02-16]</p>
+        <a href="mailto:zi.architect33rd@gmail.com" class="btn">BECOME A DIVINE CONDUIT</a>
 
         <footer>
             <p>© 2026 | ID: ZI-2026-X | zi.architect33rd@gmail.com</p>
-            <p style="color: var(--gold); margin-top: 10px;">G-MAXI ПЕРЕВІРЕНО ШІ | СТАТУС: БОЖЕСТВЕННЕ ВИРІВНЮВАННЯ АКТИВНЕ</p>
+            <p style="color: var(--gold); margin-top: 10px;">G-MAXI AI | ARCHITECT-ZI-STYLE-B2B-ELITE-2026</p>
         </footer>
     </div>
 </body>
