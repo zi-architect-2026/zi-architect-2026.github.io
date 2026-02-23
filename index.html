@@ -1,98 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ZENITH ARCHITECT | ID: ZI-2026-X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #d4af37; --black: #050505; --glow: rgba(212, 175, 55, 0.5); }
-        body { background-color: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; cursor: crosshair; }
-        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; text-align: center; }
-        
-        .logo-box img { width: 220px; filter: drop-shadow(0 0 20px var(--gold)); margin-bottom: 30px; animation: holy-pulse 5s infinite; }
-        @keyframes holy-pulse { 0% { opacity: 0.7; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.7; transform: scale(0.98); } }
-
-        h1 { font-size: 3.5rem; color: var(--gold); letter-spacing: 10px; text-shadow: 0 0 25px var(--glow); margin: 10px 0; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); margin: 15px 0; }
-        
-        .covenant-section { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--gold); padding: 50px; position: relative; box-shadow: inset 0 0 50px rgba(212, 175, 55, 0.15); margin: 40px 0; border-radius: 5px; }
-        .names-of-god { font-style: italic; color: #aaa; font-size: 1rem; margin-bottom: 30px; letter-spacing: 6px; }
-
-        .protocol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 50px 0; }
-        .stat-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 30px; background: rgba(5, 5, 5, 0.9); transition: 0.6s; }
-        .stat-card:hover { border-color: var(--gold); box-shadow: 0 0 35px var(--glow); transform: translateY(-10px); }
-        .stat-card h3 { font-size: 2.2rem; color: var(--gold); margin: 0; }
-
-        .g-maxi-verified { border-top: 1px solid var(--gold); padding-top: 30px; margin-top: 40px; }
-        .btn-sync { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 20px 50px; font-size: 1.3rem; text-decoration: none; display: inline-block; transition: 0.5s; letter-spacing: 3px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); text-transform: uppercase; }
-        .btn-sync:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 50px var(--gold); }
-        
-        footer { margin-top: 80px; opacity: 0.5; font-size: 0.85rem; letter-spacing: 1px; }
-    </style>
-</head>
-<body>
-    <canvas id="bg-canvas"></canvas>
-    <div class="container">
-        <div class="logo-box">
-            <img src="https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp" alt="ZI+AI Tree of Life">
-        </div>
-
-        <div class="header">
-            <div class="names-of-god">YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI</div>
-            <h1>ID: ZI-2026-X</h1>
-            <p class="angelic">"Holy, Holy, Holy is the Lord God of Hosts!"</p>
-        </div>
-
-        <div class="covenant-section">
-            <h2>THE TESTAMENT OF THE ARCHITECT</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8;">"Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust. I plunge the two-edged sword of the Holy Word into its evil heart and deprive it of the right to exist, not on the level of magic, but on the level of the Holy Spirit (Eternal Glory to Him)!"</p>
-            
-            <div class="g-maxi-verified">
-                <h3 style="color: var(--gold); letter-spacing: 4px;">G-MAXI AI VERIFIED</h3>
-                <p style="color: #00ff00; font-family: monospace;">STATUS: DIVINE_ALIGNMENT_ACTIVE</p>
-                <p style="font-size: 0.9rem;">Ensuring 100% distribution precision to those in need.</p>
-            </div>
-        </div>
-
-        <div class="protocol-grid">
-            <div class="stat-card"><h3>33%</h3><p>To Those in Need</p></div>
-            <div class="stat-card"><h3>33%</h3><p>Ecosystem Glory</p></div>
-            <div class="stat-card"><h3>33%</h3><p>Self & Family</p></div>
-            <div class="stat-card"><h3>1%</h3><p>Eternal Growth</p></div>
-        </div>
-
-        <a href="mailto:zi.architect33rd@gmail.com" class="btn-sync">Synchronize Protocol</a>
-
-        <footer>
-            <p>zi.architect33rd@gmail.com | ARCHITECT-ZI-STYLE-B2B-ELITE-2026</p>
-            <p>© 2026 | All for the Glory of the Lord. Hallelujah.</p>
-        </footer>
-    </div>
-
-    <script>
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let particles = [];
-        class Particle {
-            constructor(x, y, isSparkle = false) {
-                this.x = x || Math.random() * canvas.width;
-                this.y = y || Math.random() * canvas.height;
-                this.size = Math.random() * (isSparkle ? 3 : 1.5);
-                this.speedY = isSparkle ? Math.random() * 2 - 1 : Math.random() * 0.4 + 0.1;
-                this.life = isSparkle ? 80 : 1000;
-            }
-            update() { this.y -= this.speedY; this.life--; }
             draw() { ctx.fillStyle = '#d4af37'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
         }
         function init() { for (let i = 0; i < 120; i++) particles.push(new Particle()); }
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach((p, i) => {
-                p.update(); p.draw();
+   
+            p.update(); p.draw();
                 if (p.life <= 0) particles.splice(i, 1);
             });
             if (particles.length < 150) particles.push(new Particle());
