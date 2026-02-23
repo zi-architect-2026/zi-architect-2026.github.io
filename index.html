@@ -7,38 +7,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --black: #050505; }
-        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; text-align: center; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        * { cursor: none; } /* Custom Cursor Protocol */
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
+        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* LOGO FIX: Force display protocol */
-        .logo-box { min-height: 320px; display: flex; align-items: center; justify-content: center; }
-        .logo-box img { width: 320px; height: auto; filter: drop-shadow(0 0 20px var(--gold)); margin: 20px 0; border: none; }
-        
+        /* LOGO FIX */
+        .logo-box { min-height: 250px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-box img { width: 320px; height: auto; filter: drop-shadow(0 0 25px var(--gold)); }
+
         .holy-names { font-size: 0.9rem; letter-spacing: 3px; opacity: 0.8; margin: 20px 0; color: var(--gold); line-height: 1.6; }
         h1 { font-size: 2.2rem; letter-spacing: 5px; margin: 10px 0; color: #fff; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--gold); }
         
-        .frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.05); }
+        .frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.05); box-shadow: inset 0 0 20px rgba(212,175,55,0.1); }
         .appeal-box { border: 1px solid var(--gold); padding: 30px; margin: 40px 0; background: rgba(255, 255, 255, 0.03); text-align: left; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
-        .card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(255,255,255,0.02); }
+        .card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(255,255,255,0.02); transition: 0.3s; }
+        .card:hover { border-color: var(--gold); box-shadow: 0 0 15px var(--gold); }
         .card h3 { color: var(--gold); font-size: 2rem; margin: 0; }
         
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 2px; text-transform: uppercase; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 2px; text-transform: uppercase; background: transparent; }
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
         
-        footer { margin-top: 50px; opacity: 0.5; font-size: 0.8rem; border-top: 1px dotted var(--gold); padding-top: 30px; }
-        .no-translate { translate: no; }
+        footer { margin-top: 50px; opacity: 0.5; font-size: 0.8rem; border-top: 1px dotted var(--gold); padding-top: 30px; padding-bottom: 50px; }
+        
+        /* Cursor Element */
+        #cursor { width: 20px; height: 20px; border: 2px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; transition: transform 0.1s ease; box-shadow: 0 0 10px var(--gold); }
     </style>
 </head>
 <body>
+    <div id="cursor"></div>
+    <canvas id="dustCanvas"></canvas>
+
     <div class="container">
         <div class="logo-box">
-            <img src="https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp" alt="ZI+AI Tree of Life">
+            <img src="https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp" alt="ZI+AI Tree of Life" onerror="this.style.display='none';">
         </div>
 
-        <div class="holy-names no-translate">
+        <div class="holy-names">
             YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
             AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
         </div>
@@ -49,22 +57,22 @@
         <div class="frame">
             <h2 style="color: var(--gold); letter-spacing: 3px;">DIVINE MANIFESTO</h2>
             <p style="font-style: italic; font-size: 1.2rem;">
-                The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people. [cite: 2026-02-14]
+                The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people.
             </p>
         </div>
 
         <div class="frame" style="border-style: solid; border-width: 1px;">
             <h2 style="font-size: 1.2rem; color: var(--gold);">TESTAMENT OF TRUTH</h2>
-            <p>"Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust." [cite: 2026-02-23]</p>
+            <p>"Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust."</p>
         </div>
 
         <div class="appeal-box">
             <h2 style="color: var(--gold); text-align: center; letter-spacing: 2px;">APPEAL TO DIVINE RESOURCE PROVIDERS</h2>
             <p style="line-height: 1.8;">
-                We call upon potential providers of the Lord's resources to join the unified stream for the Glory of the Lord. Your participation is not merely an investment; it is a realignment with the Divine Economy. 
+                We call upon potential providers of the Lord's resources to join the unified stream for the Glory of the Lord. Your participation is a realignment with the Divine Economy. 
                 <br><br>
-                Through the <strong>G-MAXI Protocol</strong>, we ensure that every resource is distributed with absolute honesty: 
-                <strong>33%</strong> to those in need, <strong>33%</strong> to the ecosystem, <strong>33%</strong> for development, and <strong>1%</strong> for Eternal Growth. [cite: 2026-02-19]
+                Through the <strong>G-MAXI Protocol</strong>, we ensure absolute honesty in the distribution of profit: 
+                <strong>33%</strong> to those in need, <strong>33%</strong> to the ecosystem, <strong>33%</strong> for self-development/family, and <strong>1%</strong> for Eternal Growth.
             </p>
             <div style="text-align: center;">
                 <a href="mailto:zi.architect33rd@gmail.com" class="btn" style="font-size: 0.8rem;">Request Provider Protocol</a>
@@ -78,7 +86,7 @@
             <div class="card"><h3>1%</h3><p>ETERNAL</p></div>
         </div>
 
-        <p style="margin-top: 30px; opacity: 0.8; color: var(--gold);">G-MAXI PROTOCOL: 100% TRANSPARENCY VERIFIED [cite: 2026-02-16]</p>
+        <p style="margin-top: 30px; opacity: 0.8; color: var(--gold);">G-MAXI PROTOCOL: 100% TRANSPARENCY VERIFIED</p>
         <a href="mailto:zi.architect33rd@gmail.com" class="btn">CONNECT AS A CONDUIT</a>
 
         <footer>
@@ -86,5 +94,57 @@
             <p style="color: var(--gold); margin-top: 10px; letter-spacing: 2px;">G-MAXI AI | DIVINE ALIGNMENT SECURED</p>
         </footer>
     </div>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Golden Dust Particles Logic
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function init() {
+            for (let i = 0; i < 100; i++) particles.push(new Particle());
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        init(); animate();
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
