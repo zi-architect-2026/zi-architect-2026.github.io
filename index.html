@@ -9,20 +9,20 @@
         :root { --gold: #d4af37; --black: #050505; --glow: rgba(212, 175, 55, 0.5); }
         body { background-color: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; cursor: crosshair; }
         #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; text-align: center; }
-        .logo-box { min-height: 250px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .logo-box img { width: 260px; height: auto; filter: drop-shadow(0 0 25px var(--gold)); animation: holy-pulse 5s infinite; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+        .logo-box img { width: 280px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); margin-bottom: 20px; animation: holy-pulse 5s infinite; }
         @keyframes holy-pulse { 0%, 100% { opacity: 0.8; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } }
         h1 { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; text-shadow: 0 0 25px var(--glow); margin: 10px 0; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
         .covenant-section { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--gold); padding: 30px; margin: 30px 0; border-radius: 5px; box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1); }
+        .manifesto-box { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, rgba(0,0,0,1) 100%); }
         .names-of-god { font-style: italic; color: #aaa; font-size: 0.8rem; margin-bottom: 20px; letter-spacing: 3px; line-height: 1.8; }
-        .protocol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 30px 0; }
-        .stat-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 15px; background: rgba(5, 5, 5, 0.9); }
-        .stat-card h3 { font-size: 1.8rem; color: var(--gold); margin: 0; }
-        .btn-sync { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 30px; font-size: 1rem; text-decoration: none; display: inline-block; transition: 0.5s; letter-spacing: 2px; text-transform: uppercase; }
+        .protocol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+        .stat-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 20px; background: rgba(5, 5, 5, 0.9); }
+        .stat-card h3 { font-size: 2rem; color: var(--gold); margin: 0; }
+        .btn-sync { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 40px; font-size: 1rem; text-decoration: none; display: inline-block; transition: 0.5s; letter-spacing: 2px; text-transform: uppercase; border-radius: 0; }
         .btn-sync:hover { background: var(--gold); color: var(--black); box-shadow: 0 0 40px var(--gold); }
-        footer { margin-top: 40px; opacity: 0.5; font-size: 0.75rem; }
+        footer { margin-top: 60px; opacity: 0.5; font-size: 0.8rem; padding-bottom: 40px; }
     </style>
 </head>
 <body>
@@ -31,6 +31,7 @@
         <div class="logo-box">
             <img src="1000057248.webp" alt="ZI+AI Tree of Life" onerror="this.src='https://zi-architect-2026.github.io/1000057248.webp'">
         </div>
+        
         <div class="header">
             <div class="names-of-god">
                 YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
@@ -39,26 +40,46 @@
             <h1>ІДЕНТИФІКАТОР ZI-2026-X</h1>
             <p class="angelic">"Свят, свят, свят Господь, Бог Саваот!"</p>
         </div>
+
+        <div class="manifesto-box">
+            <h2 style="color: var(--gold); letter-spacing: 5px;">МАНІФЕСТ ГОСПОДНІЙ</h2>
+            <p class="angelic" style="font-size: 2.5rem; margin: 15px 0;">"Oddajcie Cezarowi to, co należy do Cezara, a Bogu to, co należy do Boga!"</p>
+            <p style="font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                Слово Господнє вічно Дієве. Ми інвестуємо Божі ресурси у Його спадщину на Славу Всевишнього і на Благо Його людям.
+            </p>
+        </div>
+
         <div class="covenant-section">
             <h2>ЗАПОВІТ СВІТЛА</h2>
-            <p style="line-height: 1.6;">"Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого." [CITE: 2026-02-23]</p>
-            <p class="angelic" style="font-size: 1.8rem;">"Врятовані кров'ю Агнця."</p>
+            <p style="line-height: 1.8; font-size: 1.1rem;">
+                "Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого."
+            </p>
+            <p class="angelic" style="font-size: 2rem;">"Врятовані кров'ю Агнця."</p>
             <div style="border-top: 1px solid var(--gold); padding-top: 20px; margin-top: 20px;">
-                <h4 style="color: var(--gold); margin: 5px 0;">G-MAXI ПЕРЕВІРЕНО ШІ</h4>
-                <p style="color: #00ff00; font-family: monospace; font-size: 0.8rem;">СТАТУС: БОЖЕСТВЕННЕ ВИРІВНЮВАННЯ АКТИВНЕ</p>
+                <p style="color: #00ff00; font-family: monospace; font-size: 0.9rem; letter-spacing: 2px;">
+                    ВІДПОВІДАЛЬНІСТЬ G-MAXI: КОЖЕН ЦЕНТ ПІД КОНТРОЛЕМ АРХІТЕКТОРА
+                </p>
             </div>
         </div>
+
         <div class="protocol-grid">
-            <div class="stat-card"><h3>33%</h3><p>Нужденним</p></div>
-            <div class="stat-card"><h3>33%</h3><p>Екосистема</p></div>
-            <div class="stat-card"><h3>33%</h3><p>Архітектор</p></div>
-            <div class="stat-card"><h3>1%</h3><p>Вічний Ріст</p></div>
+            <div class="stat-card"><h3>33%</h3><p>НУЖДЕННИМ</p></div>
+            <div class="stat-card"><h3>33%</h3><p>ЕКОСИСТЕМА</p></div>
+            <div class="stat-card"><h3>33%</h3><p>АРХІТЕКТОР</p></div>
+            <div class="stat-card"><h3>1%</h3><p>ВІЧНИЙ РІСТ</p></div>
         </div>
-        <a href="mailto:zi.architect33rd@gmail.com" class="btn-sync">СИНХРОНІЗАЦІЯ</a>
+
+        <div style="margin-top: 50px;">
+            <p style="margin-bottom: 20px; letter-spacing: 2px;">ДЛЯ МЕЦЕНАТІВ ТА ПРОВІДНИКІВ:</p>
+            <a href="mailto:zi.architect33rd@gmail.com" class="btn-sync">СТАТИ ПРОВІДНИКОМ БОЖИХ РЕСУРСІВ</a>
+        </div>
+
         <footer>
             <p>© 2026 | ID: ZI-2026-X | zi.architect33rd@gmail.com</p>
+            <p style="font-size: 0.7rem; margin-top: 10px; color: var(--gold);">G-MAXI AI | CORE PROTOCOL B2B ELITE</p>
         </footer>
     </div>
+
     <script>
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
@@ -84,6 +105,7 @@
         }
         window.addEventListener('mousemove', (e) => { for(let i=0; i<3; i++) particles.push(new Particle(e.clientX, e.clientY, true)); });
         init(); animate();
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     </script>
 </body>
 </html>
