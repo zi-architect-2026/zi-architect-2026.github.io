@@ -4,127 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE ZENITH ARCHITECT | ID: ZI-2026-X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --black: #050505; }
         * { cursor: none; }
         body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        
-        /* THE DIVINE SEAL: GIF Display */
         .logo-box { min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
         .logo-box img { width: 380px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); border-radius: 50%; transition: 0.5s; }
-        .logo-box img:hover { transform: scale(1.05); filter: drop-shadow(0 0 50px var(--gold)); }
-
-        .holy-names { font-size: 0.9rem; letter-spacing: 4px; opacity: 0.9; margin: 25px 0; color: var(--gold); line-height: 1.8; }
-        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; color: #fff; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+        .holy-names { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin: 25px 0; }
+        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); }
-        
         .frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.05); }
-        .appeal-box { border: 1px solid var(--gold); padding: 35px; margin: 40px 0; background: rgba(255, 255, 255, 0.02); text-align: center; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 40px 0; }
-        .card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 25px; background: rgba(255,255,255,0.02); transition: 0.5s; }
-        .card:hover { border-color: var(--gold); background: rgba(212, 175, 55, 0.1); }
-        .card h3 { color: var(--gold); font-size: 2.2rem; margin: 0; }
-        
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 20px 45px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 3px; text-transform: uppercase; background: transparent; font-weight: bold; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 20px 45px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 3px; background: transparent; }
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 40px var(--gold); }
-        
-        footer { margin-top: 60px; opacity: 0.6; font-size: 0.8rem; border-top: 1px dotted var(--gold); padding: 40px 0 60px; }
-        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); transition: width 0.2s, height 0.2s; }
+        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
     </style>
 </head>
 <body>
     <div id="halo-cursor"></div>
     <canvas id="dustCanvas"></canvas>
-
     <div class="container">
         <div class="logo-box">
             <img src="logo.gif" alt="Tree of Life Seal">
         </div>
-
         <div class="holy-names">
             YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
             AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
         </div>
-
         <h1>IDENTIFIER ZI-2026-X</h1>
         <p class="angelic">"Holy, Holy, Holy is the Lord of Hosts!"</p>
-
         <div class="frame">
-            <h2 style="color: var(--gold); letter-spacing: 4px;">DIVINE MANIFESTO</h2>
-            <p style="font-style: italic; font-size: 1.3rem; line-height: 1.6;">
-                The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people.
-            </p>
+            <h2 style="color: var(--gold);">DIVINE MANIFESTO</h2>
+            <p>The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people.</p>
         </div>
-
-        <div class="frame" style="border-style: solid; border-width: 1px;">
-            <h2 style="font-size: 1.2rem; color: var(--gold);">TESTAMENT OF TRUTH</h2>
-            <p>"Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust."</p>
-        </div>
-
-        <div class="appeal-box">
-            <h2 style="color: var(--gold); letter-spacing: 2px;">APPEAL TO PATRONS & INVESTORS</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9;">
-                We call upon the potential providers of the Lord's resources—visionary patrons and investors of the Divine Cause—to join the stream for the Glory of the Lord. 
-                <br><br>
-                Through the <strong>G-MAXI Protocol</strong>, we ensure 100% honesty: 
-                <strong>33%</strong> needy, <strong>33%</strong> ecosystem, <strong>33%</strong> self/family, and <strong>1%</strong> Eternal Growth.
-            </p>
-            <a href="mailto:zi.architect33rd@gmail.com" class="btn">Request Provider Protocol</a>
-        </div>
-
-        <div class="grid">
-            <div class="card"><h3>33%</h3><p>NEEDY</p></div>
-            <div class="card"><h3>33%</h3><p>ECOSYSTEM</p></div>
-            <div class="card"><h3>33%</h3><p>ARCHITECT</p></div>
-            <div class="card"><h3>1%</h3><p>ETERNAL</p></div>
-        </div>
-
-        <footer>
-            <p>© 2026 | ID: ZI-2026-X | zi.architect33rd@gmail.com</p>
-            <p style="color: var(--gold); margin-top: 15px; letter-spacing: 3px; font-weight: bold;">G-MAXI AI | DIVINE ALIGNMENT ACTIVE</p>
+        <a href="mailto:zi.architect33rd@gmail.com" class="btn">CONNECT AS A CONDUIT</a>
+        <footer style="margin-top: 60px; opacity: 0.6; font-size: 0.8rem;">
+            <p>© 2026 | ID: ZI-2026-X | G-MAXI AI PROTOCOL ACTIVE</p>
         </footer>
     </div>
-
     <script>
         const cursor = document.getElementById('halo-cursor');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
         const canvas = document.getElementById('dustCanvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let particles = [];
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2.5 + 0.1;
-                this.speedX = Math.random() * 0.8 - 0.4;
-                this.speedY = Math.random() * 0.8 - 0.4;
-            }
-            update() {
-                this.x += this.speedX; this.y += this.speedY;
-                if (this.x > canvas.width) this.x = 0; if (this.x < 0) this.x = canvas.width;
-                if (this.y > canvas.height) this.y = 0; if (this.y < 0) this.y = canvas.height;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
-                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
-            }
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        let p = [];
+        class Part {
+            constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.s = Math.random()*2; this.vx = Math.random()*0.5-0.25; this.vy = Math.random()*0.5-0.25; }
+            u() { this.x+=this.vx; this.y+=this.vy; if(this.x>canvas.width)this.x=0; if(this.y>canvas.height)this.y=0; }
+            d() { ctx.fillStyle='rgba(212,175,55,0.4)'; ctx.beginPath(); ctx.arc(this.x,this.y,this.s,0,Math.PI*2); ctx.fill(); }
         }
-        function init() { for (let i = 0; i < 120; i++) particles.push(new Particle()); }
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            requestAnimationFrame(animate);
-        }
-        init(); animate();
+        for(let i=0; i<100; i++) p.push(new Part());
+        function anim() { ctx.clearRect(0,0,canvas.width,canvas.height); p.forEach(x=>{x.u(); x.d();}); requestAnimationFrame(anim); }
+        anim();
     </script>
 </body>
 </html>
