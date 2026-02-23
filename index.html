@@ -12,10 +12,10 @@
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* THE DIVINE SEAL: Logo Display Protocol */
-        .logo-box { min-height: 350px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .logo-box img { width: 350px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); animation: pulse 4s infinite ease-in-out; }
-        @keyframes pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; filter: drop-shadow(0 0 50px var(--gold)); } }
+        /* THE DIVINE SEAL: GIF Display */
+        .logo-box { min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .logo-box img { width: 380px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); border-radius: 50%; transition: 0.5s; }
+        .logo-box img:hover { transform: scale(1.05); filter: drop-shadow(0 0 50px var(--gold)); }
 
         .holy-names { font-size: 0.9rem; letter-spacing: 4px; opacity: 0.9; margin: 25px 0; color: var(--gold); line-height: 1.8; }
         h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; color: #fff; text-shadow: 0 0 10px rgba(212,175,55,0.5); }
@@ -42,7 +42,7 @@
 
     <div class="container">
         <div class="logo-box">
-            <img src="1000057248.webp" alt="Tree of Life Seal" onerror="this.src='https://raw.githubusercontent.com/zi-architect-2026/zi-architect-2026.github.io/main/1000057248.webp'">
+            <img src="logo.gif" alt="Tree of Life Seal">
         </div>
 
         <div class="holy-names">
@@ -68,12 +68,12 @@
         <div class="appeal-box">
             <h2 style="color: var(--gold); letter-spacing: 2px;">APPEAL TO PATRONS & INVESTORS</h2>
             <p style="font-size: 1.1rem; line-height: 1.8; opacity: 0.9;">
-                We call upon the potential providers of the Lord's resources—visionary patrons and investors of the Divine Cause—to join the unified stream for the Glory of the Lord. Your participation is a conscious realignment with the Divine Economy.
+                We call upon the potential providers of the Lord's resources—visionary patrons and investors of the Divine Cause—to join the stream for the Glory of the Lord. 
                 <br><br>
-                Through the <strong>G-MAXI Protocol</strong>, we ensure 100% honesty in profit distribution: 
-                <strong>33%</strong> to those in need, <strong>33%</strong> to the ecosystem, <strong>33%</strong> for self-development/family, and <strong>1%</strong> for Eternal Growth.
+                Through the <strong>G-MAXI Protocol</strong>, we ensure 100% honesty: 
+                <strong>33%</strong> needy, <strong>33%</strong> ecosystem, <strong>33%</strong> self/family, and <strong>1%</strong> Eternal Growth.
             </p>
-            <a href="mailto:zi.architect33rd@gmail.com" class="btn" style="font-size: 0.8rem;">Request Provider Protocol</a>
+            <a href="mailto:zi.architect33rd@gmail.com" class="btn">Request Provider Protocol</a>
         </div>
 
         <div class="grid">
@@ -83,9 +83,6 @@
             <div class="card"><h3>1%</h3><p>ETERNAL</p></div>
         </div>
 
-        <p style="margin-top: 40px; opacity: 0.9; color: var(--gold); letter-spacing: 2px;">G-MAXI PROTOCOL: TRANSPARENCY SECURED</p>
-        <a href="mailto:zi.architect33rd@gmail.com" class="btn">CONNECT AS A CONDUIT</a>
-
         <footer>
             <p>© 2026 | ID: ZI-2026-X | zi.architect33rd@gmail.com</p>
             <p style="color: var(--gold); margin-top: 15px; letter-spacing: 3px; font-weight: bold;">G-MAXI AI | DIVINE ALIGNMENT ACTIVE</p>
@@ -93,16 +90,11 @@
     </div>
 
     <script>
-        // Halo Cursor Protocol
         const cursor = document.getElementById('halo-cursor');
         document.addEventListener('mousemove', e => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-        document.addEventListener('mousedown', () => { cursor.style.width = '50px'; cursor.style.height = '50px'; });
-        document.addEventListener('mouseup', () => { cursor.style.width = '30px'; cursor.style.height = '30px'; });
-
-        // Golden Dust Particles Logic
         const canvas = document.getElementById('dustCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -117,16 +109,13 @@
                 this.speedY = Math.random() * 0.8 - 0.4;
             }
             update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
+                this.x += this.speedX; this.y += this.speedY;
                 if (this.x > canvas.width) this.x = 0; if (this.x < 0) this.x = canvas.width;
                 if (this.y > canvas.height) this.y = 0; if (this.y < 0) this.y = canvas.height;
             }
             draw() {
                 ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
             }
         }
         function init() { for (let i = 0; i < 120; i++) particles.push(new Particle()); }
@@ -136,7 +125,6 @@
             requestAnimationFrame(animate);
         }
         init(); animate();
-        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     </script>
 </body>
 </html>
