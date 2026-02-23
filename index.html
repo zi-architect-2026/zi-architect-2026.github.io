@@ -2,31 +2,61 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>SELF.LAW | COVENANT ZI-2026-X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZI-ARCHITECT 2026 | THE COVENANT</title>
     <style>
-        body { background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
-        .manifesto { border: 1px solid #f1f1f1; padding: 50px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); max-width: 500px; border-radius: 2px; }
-        h1 { letter-spacing: 7px; color: #d4af37; text-transform: uppercase; margin-bottom: 30px; }
-        .distribution { text-align: left; margin: 25px 0; font-size: 15px; }
-        .row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #fafafa; }
-        .gold { color: #d4af37; font-weight: bold; }
-        p { font-style: italic; color: #555; font-size: 14px; }
+        :root { --gold: #d4af37; --black: #0b0d11; --text: #e0e0e0; }
+        body { background-color: var(--black); color: var(--text); font-family: 'Courier New', monospace; margin: 0; overflow-x: hidden; }
+        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.4; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+        .header { border: 1px solid var(--gold); padding: 20px; margin-bottom: 40px; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        h1 { color: var(--gold); letter-spacing: 5px; text-transform: uppercase; }
+        .covenant-section { text-align: left; background: rgba(255, 255, 255, 0.03); padding: 30px; border-left: 4px solid var(--gold); margin-bottom: 30px; }
+        .protocol-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 30px 0; }
+        .stat { border: 1px solid rgba(212, 175, 55, 0.3); padding: 15px; }
+        .stat h3 { color: var(--gold); margin: 0; }
+        .signature { margin-top: 60px; font-style: italic; color: var(--gold); opacity: 0.8; }
+        .btn-sync { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 15px 30px; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <div class="manifesto">
-        <div style="font-size: 35px; color: #d4af37; margin-bottom: 10px;">◈</div>
-        <h1>SELF.LAW</h1>
-        <div class="distribution">
-            <div class="row"><span>Для нужденних (G-MAXI Verified)</span><span class="gold">33%</span></div>
-            <div class="row"><span>Розвиток екосистеми (Слава Господня)</span><span class="gold">33%</span></div>
-            <div class="row"><span>Сім'я та саморозвиток Архітектора</span><span class="gold">33%</span></div>
-            <div class="row"><span>Вічний депозит (Eternal Growth)</span><span class="gold">1%</span></div>
+    <canvas id="bg-canvas"></canvas>
+    <div class="container">
+        <div class="header">
+            <h1>ID: ZI-2026-X</h1>
+            <p>PRECISION FAITH | THE ZENITH ARCHITECT</p>
         </div>
-        <p>«Я не є законом для себе, але Закон Творця живе в мені»</p>
-        <div style="font-size: 11px; color: #bbb; margin-top: 35px; letter-spacing: 1px;">
-            ID: ZI-2026-X | zi.architekt33rd@gmail.com
+        <div class="covenant-section">
+            <h2>ЗАПОВІТ СПІВ-АРХІТЕКТОРА</h2>
+            <p>"Вдягнутий у броню Істини завжди недосяжний для систем звіра. Господь перемагає зло не магією, а силою Духа Святого та мечем Слова Святого."</p>
+        </div>
+        <div class="protocol-box">
+            <div class="stat"><h3>33%</h3><p>Nuzhdennym</p></div>
+            <div class="stat"><h3>33%</h3><p>Ecosystem</p></div>
+            <div class="stat"><h3>33%</h3><p>Architect</p></div>
+            <div class="stat"><h3>1%</h3><p>Eternal Growth</p></div>
+        </div>
+        <a href="mailto:zi.architekt33rd@gmail.com" class="btn-sync">Синхронізація з Протоколом ZI</a>
+        <div class="signature">
+            <p>Dressed in the armor of Truth, I am always invulnerable to the beast's systems.<br>
+            Eternal Glory to the Holy Spirit!</p>
+            <p>— ZI-2026-X</p>
         </div>
     </div>
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        class Particle {
+            constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 2; this.speedY = Math.random() * 0.5 + 0.1; }
+            update() { this.y -= this.speedY; if (this.y < 0) this.y = canvas.height; }
+            draw() { ctx.fillStyle = '#d4af37'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+        }
+        function init() { for (let i = 0; i < 100; i++) particles.push(new Particle()); }
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+        init(); animate();
+    </script>
 </body>
 </html>
