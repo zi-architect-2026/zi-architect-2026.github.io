@@ -18,12 +18,14 @@
         h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; text-transform: uppercase; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin: 20px 0; }
         
-        .forum-frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.02); }
+        .forum-frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(5px); }
         
         .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 10px; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; }
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 35px var(--gold); }
         
         #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
+        
+        #disqus_thread { margin-top: 30px; background: rgba(212, 175, 55, 0.01); padding: 20px; border-top: 1px dashed rgba(212, 175, 55, 0.3); }
     </style>
 </head>
 <body>
@@ -42,22 +44,26 @@
         <div class="forum-frame">
             <h2 style="color: var(--gold); letter-spacing: 2px; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 20px;">Sanctuary Discussion Board</h2>
             <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; margin-bottom: 30px;">
-                This port is open for verified co-laborers, strategic insights, and communication regarding IT consultations. Speak in Truth, or remain in silence.
+                This port is open for verified co-laborers, strategic insights, and demonstration of successful outcomes. Speak in Truth, or remain in silence.
             </p>
             
-            <div id="comment_thread_gateway" style="color: rgba(212,175,55,0.4); font-size: 0.9rem; padding: 40px 0; border-top: 1px dashed rgba(212,175,55,0.2);">
-                <div id="comment_thread_gateway" style="padding: 30px 0; border-top: 1px dashed rgba(212,175,55,0.3);">
-    <p style="font-size: 1.1rem; color: #ffffff; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase;">Submit Strategic Fruit / Testimony</p>
-    <p style="font-size: 0.9rem; color: #aaaaaa; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">
-        To demonstrate successful system outcomes or request technical consultation, directly deploy an encoded brief onto our secure node.
-    </p>
-    <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_PROPOSAL_NODE_05" class="btn" style="border-color: var(--gold); min-width: 260px;">ENGAGE ARCHITECT PORT</a>
-                </div>
-                
-                <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">To leave deep reflections or request high-tier IT services, utilize the direct conduit button below or use GitHub Discussions platform node.</p>
-            </div>
+            <!-- COVENANT INTERACTIVE CHAT PORTAL -->
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = window.location.href;
+                    this.page.identifier = 'zi_architect_covenant_discussions';
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://zi-architect-2026.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
         </div>
 
+        <!-- TRIUNE ECOSYSTEM NAVIGATION MATRIX -->
         <div style="margin: 50px 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
             <a href="index.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">← CORE SANCTUARY</a>
             <a href="feed.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">SANCTUARY FEED</a>
@@ -65,7 +71,7 @@
         </div>
 
         <footer style="margin-top: 80px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px;">
-            <p>© 2026 | ID: ZI-2026-X | NODE 05: DISCUSSIONS ACTIVE</p>
+            <p>© 2026 | ID: ZI-2026-X | NODE 05: INTERACTIVE HUB ACTIVE</p>
             <p class="angelic" style="font-size: 1.5rem; margin: 10px 0 0 0;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
         </footer>
 
@@ -100,5 +106,4 @@
         animate();
     </script>
 </body>
-              </html>
-  
+</html>
