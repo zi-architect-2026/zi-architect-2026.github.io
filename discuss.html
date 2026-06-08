@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZI+AI ECOSYSTEM | COVENANT DISCUSSIONS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --black: #050505; }
+        * { cursor: none; }
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
+        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        .header-block { margin-top: 40px; margin-bottom: 30px; }
+        .soli-title { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 10px; font-weight: bold; }
+        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; text-transform: uppercase; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin: 20px 0; }
+        
+        .forum-frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.02); }
+        
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 10px; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 35px var(--gold); }
+        
+        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
+    </style>
+</head>
+<body>
+
+    <div id="halo-cursor"></div>
+    <canvas id="dustCanvas"></canvas>
+
+    <div class="container">
+        
+        <div class="header-block">
+            <div class="soli-title">SOLI DEO GLORIA • FELLOWSHIP NODE</div>
+            <h1>The Covenant Council</h1>
+            <p class="angelic">"Iron Sharpens Iron"</p>
+        </div>
+
+        <div class="forum-frame">
+            <h2 style="color: var(--gold); letter-spacing: 2px; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 20px;">Sanctuary Discussion Board</h2>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; margin-bottom: 30px;">
+                This port is open for verified co-laborers, strategic insights, and communication regarding IT consultations. Speak in Truth, or remain in silence.
+            </p>
+            
+            <div id="comment_thread_gateway" style="color: rgba(212,175,55,0.4); font-size: 0.9rem; padding: 40px 0; border-top: 1px dashed rgba(212,175,55,0.2);">
+                [SECURE FELLOWSHIP CHANNEL INITIALIZED]<br>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">To leave deep reflections or request high-tier IT services, utilize the direct conduit button below or use GitHub Discussions platform node.</p>
+            </div>
+        </div>
+
+        <div style="margin: 50px 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+            <a href="index.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">← CORE SANCTUARY</a>
+            <a href="feed.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">SANCTUARY FEED</a>
+            <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_COUNCIL_INQUIRY" class="btn" style="margin: 0; min-width: 280px; border-color: var(--gold);">DIRECT COVENANT MAIL</a>
+        </div>
+
+        <footer style="margin-top: 80px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px;">
+            <p>© 2026 | ID: ZI-2026-X | NODE 05: DISCUSSIONS ACTIVE</p>
+            <p class="angelic" style="font-size: 1.5rem; margin: 10px 0 0 0;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const cursor = document.getElementById('halo-cursor');
+        document.addEventListener('mousemove', e => { 
+            cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; 
+        });
+
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resizeCanvas(); window.addEventListener('resize', resizeCanvas);
+
+        let particles = [];
+        class Particle {
+            constructor() { 
+                this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; 
+                this.s = Math.random() * 2.5; this.vx = Math.random() * 0.4 - 0.2; this.vy = Math.random() * 0.4 - 0.2; 
+            }
+            update() { 
+                this.x += this.vx; this.y += this.vy; 
+                if(this.x > canvas.width) this.x = 0; if(this.x < 0) this.x = canvas.width;
+                if(this.y > canvas.height) this.y = 0; if(this.y < 0) this.y = canvas.height;
+            }
+            draw() { ctx.fillStyle = 'rgba(212, 175, 55, 0.45)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2); ctx.fill(); }
+        }
+        for(let i = 0; i < 120; i++) particles.push(new Particle());
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+        animate();
+    </script>
+</body>
+              </html>
+  
