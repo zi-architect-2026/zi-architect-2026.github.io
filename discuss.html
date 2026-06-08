@@ -20,7 +20,10 @@
         
         .forum-frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(5px); }
         
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 10px; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; }
+        /* Interactive Chat Port Container */
+        .chat-portal { border: 1px dashed rgba(212,175,55,0.3); padding: 20px; background: rgba(212,175,55,0.01); margin: 30px 0; min-height: 400px; }
+        
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; }
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 35px var(--gold); }
         
         #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
@@ -41,27 +44,19 @@
 
         <div class="forum-frame">
             <h2 style="color: var(--gold); letter-spacing: 2px; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 20px;">Sanctuary Discussion Board</h2>
-            <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; margin-bottom: 30px;">
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; margin-bottom: 25px;">
                 This port is open for verified co-laborers, strategic insights, and demonstration of successful outcomes. Speak in Truth, or remain in silence.
             </p>
             
-            <div style="border: 1px dashed rgba(212,175,55,0.3); padding: 30px; background: rgba(212,175,55,0.02); margin: 20px 0; border-radius: 4px;">
-                <div style="color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 15px; font-weight: bold;">[ COVENANT CHANNEL GATEWAY ]</div>
-                <p style="font-size: 0.9rem; color: #aaaaaa; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
-                    To securely publish your successful B2B infrastructure results, submit system testimonies, or initiate high-tier elite architectural collaborations, utilize the direct cryptographic matrix below.
-                </p>
-                
-                <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_COUNCIL_NODE_05_SUBMISSION&body=Secure_ID:_ZI-2026-X%0A%0AArchitectural_Fruit_Description:" 
-                   class="btn" 
-                   style="border-color: var(--gold); background: rgba(212, 175, 55, 0.08); min-width: 280px; box-shadow: 0 0 15px rgba(212,175,55,0.2); margin: 0;">
-                   SUBMIT SYSTEM FRUIT
-                </a>
+            <div class="chat-portal">
+                <div id="tlkio" data-channel="zi-architect-covenant" data-theme="theme--dark" style="width:100%; height:400px;"></div>
+                <script async src="https://tlk.io/embed.js" type="text/javascript"></script>
             </div>
 
-            <div style="margin-top: 40px; text-align: left; padding: 20px; border-left: 2px solid var(--gold);">
+            <div style="margin-top: 30px; text-align: left; padding: 20px; border-left: 2px solid var(--gold);">
                 <div style="font-size: 0.85rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 5px;">ACTIVE VERIFIED PROTOCOLS:</div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.5; font-family: monospace;">
-                    • Node 01-04 Infrastructure Integrity: <span style="color: #00ff00;">ONLINE (100%)</span><br>
+                    • Node 05 Interactive Fellowship Channel: <span style="color: #00ff00;">ONLINE</span><br>
                     • 33/33/33/1 Revenue Covenant Audit: <span style="color: #00ff00;">ACTIVE</span><br>
                     • G-MAXI Target Distribution Flow: <span style="color: #00ff00;">SECURED & OPERATIONAL</span>
                 </div>
@@ -71,10 +66,11 @@
         <div style="margin: 50px 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
             <a href="index.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">← CORE SANCTUARY</a>
             <a href="feed.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">SANCTUARY FEED</a>
+            <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_COUNCIL_INQUIRY" class="btn" style="margin: 0; min-width: 280px; border-color: var(--gold); background: rgba(212, 175, 55, 0.05);">SUBMIT SYSTEM FRUIT</a>
         </div>
 
         <footer style="margin-top: 80px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px;">
-            <p>© 2026 | ID: ZI-2026-X | NODE 05: OPEN INTERACTIVE HUB ACTIVE</p>
+            <p>© 2026 | ID: ZI-2026-X | NODE 05: LIVE MATRICES OPERATIONAL</p>
             <p class="angelic" style="font-size: 1.5rem; margin: 10px 0 0 0;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
         </footer>
 
@@ -109,4 +105,5 @@
         animate();
     </script>
 </body>
-</html>
+    </html>
+    
