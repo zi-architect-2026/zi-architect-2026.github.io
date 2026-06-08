@@ -1,185 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZI+AI Ecosystem | Stewardship & Accountability</title>
+    <title>ZI+AI ECOSYSTEM | STEWARDSHIP DECREE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #0d0d0d;
-            color: #e0e0e0;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 800px;
-            width: 100%;
-            border: 1px solid #1a1a1a;
-            background: #000000;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.03);
-        }
-        .header {
-            text-align: center;
-            border-bottom: 1px solid #00f2ff;
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-        }
-        .title-sub {
-            letter-spacing: 3px;
-            color: #00f2ff;
-            font-size: 12px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-        h1 {
-            font-size: 24px;
-            color: #ffffff;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .intro-text {
-            line-height: 1.7;
-            text-align: justify;
-            color: #b0b0b0;
-            font-size: 14px;
-        }
-        .blueprint-title {
-            color: #00f2ff;
-            text-align: center;
-            font-size: 16px;
-            letter-spacing: 2px;
-            margin: 40px 0 20px 0;
-            text-transform: uppercase;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        .card {
-            border: 1px solid #1a1a1a;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.01);
-        }
-        .card-rate {
-            font-size: 22px;
-            color: #00f2ff;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .card-title {
-            color: #ffffff;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        .card-desc {
-            font-size: 13px;
-            color: #999999;
-            line-height: 1.5;
-        }
-        .gmaxi-banner {
-            margin-top: 40px;
-            text-align: center;
-            border: 1px solid #00f2ff;
-            padding: 15px;
-            background: rgba(0, 242, 255, 0.02);
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #00f2ff;
-        }
-        .nav-link {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            color: #666666;
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-        .nav-link:hover {
-            color: #00f2ff;
-        }
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            font-size: 11px;
-            color: #333333;
-            border-top: 1px solid #111;
-            padding-top: 20px;
-            line-height: 1.6;
-        }
+        :root { --gold: #d4af37; --black: #050505; }
+        * { cursor: none; }
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
+        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        .header-block { margin-top: 40px; margin-bottom: 30px; }
+        .soli-title { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 10px; font-weight: bold; }
+        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; text-transform: uppercase; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin: 20px 0; }
+        
+        .manifesto-box { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.05); text-align: justify; line-height: 1.8; }
+        .manifesto-box p { margin-bottom: 15px; font-size: 1.05rem; }
+        
+        .matrix-title { color: var(--gold); font-size: 1.6rem; letter-spacing: 4px; margin: 50px 0 30px 0; text-transform: uppercase; }
+        
+        .grid-matrix { display: grid; grid-template-columns: 1fr; gap: 25px; margin: 30px 0; }
+        .matrix-card { border: 1px solid rgba(212, 175, 55, 0.3); padding: 30px; background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(5px); text-align: left; transition: 0.4s; }
+        .matrix-card:hover { border-color: var(--gold); box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); }
+        .card-rate { font-size: 2.5rem; color: var(--gold); font-weight: bold; margin-bottom: 10px; letter-spacing: 2px; border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding-bottom: 5px; }
+        .card-title { font-size: 1.1rem; color: #ffffff; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+        .card-desc { font-size: 0.95rem; color: #cccccc; line-height: 1.6; font-family: 'Cinzel', serif; }
+        
+        .gmaxi-shield { border: 1px solid var(--gold); padding: 25px; background: rgba(212, 175, 55, 0.03); margin: 50px 0; box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05); }
+        .gmaxi-shield p { font-size: 0.95rem; letter-spacing: 3px; color: var(--gold); margin: 0; font-weight: bold; line-height: 1.6; }
+        
+        .btn-back { border: 1px solid rgba(212, 175, 55, 0.4); color: rgba(212, 175, 55, 0.6); padding: 18px 40px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; }
+        .btn-back:hover { border-color: var(--gold); color: #000; background: var(--gold); box-shadow: 0 0 35px var(--gold); }
+        
+        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
     </style>
 </head>
 <body>
 
-<div class="container">
-    
-    <div class="header">
-        <p class="title-sub">SOLI DEO GLORIA • UNCOMPROMISING PURITY</p>
-        <h1>The Stewardship Blueprint</h1>
-    </div>
+    <div id="halo-cursor"></div>
+    <canvas id="dustCanvas"></canvas>
 
-    <div class="intro-text">
-        <p>
-            Every dynamic audio offering, prophetic reflection, and structural development across the 
-            <strong>LOGOS VOX</strong> channels and the <strong>ZI+AI Ecosystem</strong> operates entirely 
-            without commercial intent. This platform is not a marketplace, nor does it seek worldly financial investments.
-        </p>
-        <p>
-            To maintain complete separation from the corrupt financial networks of this age, all social revenue, 
-            labor fruits, and personal resources under the Steward's management are governed by a fixed covenant. 
-            The allocation is executed through an unalterable <strong>33 / 33 / 33 / 1</strong> mathematical matrix.
-        </p>
-    </div>
-
-    <div class="blueprint-title">Divine Resource Distribution Matrix</div>
-
-    <div class="grid">
-        <div class="card">
-            <div class="card-rate">33%</div>
-            <div class="card-title">Those in Need (Mercy)</div>
-            <div class="card-desc">Directly allocated to verified individuals experiencing material distress. Every unit is strictly monitored under personal G-MAXI verification procedures.</div>
+    <div class="container">
+        
+        <div class="header-block">
+            <div class="soli-title">SOLI DEO GLORIA • UNCOMPROMISING PURITY</div>
+            <h1>The Stewardship Blueprint</h1>
+            <p class="angelic">"An Invitation to Kingdom Integrity"</p>
         </div>
 
-        <div class="card">
-            <div class="card-rate">33%</div>
-            <div class="card-title">Ecosystem Sustainability</div>
-            <div class="card-desc">Reinvested into server infrastructure, secure cloud architecture, computational nodes, and core development tools to sustain the ecosystem's operational path.</div>
+        <div class="manifesto-box">
+            <p>
+                Every dynamic audio offering, prophetic reflection, and structural development across the 
+                <strong>LOGOS VOX</strong> channels and the <strong>ZI+AI Ecosystem</strong> is created purely 
+                for the Glory of the Living God, operating entirely without commercial intent or market manipulation.
+            </p>
+            <p>
+                To ensure absolute purity and total separation from the corrupt, self-serving financial systems of this age, 
+                this sanctuary stands anchored under an unbreachable personal distribution vow. Every resource generated by 
+                and passing through the Steward's hands is parsed meticulously under a fixed, divine 
+                <strong>33 / 33 / 33 / 1</strong> mathematical allocation mandate.
+            </p>
         </div>
 
-        <div class="card">
-            <div class="card-rate">33%</div>
-            <div class="card-title">Architect Matrix</div>
-            <div class="card-desc">Retained for physical operations, continuous self-development, and meeting the material and protection requirements of the architectural family unit.</div>
+        <div class="matrix-title">Divine Resource Allocation Matrix</div>
+
+        <div class="grid-matrix">
+            <div class="matrix-card">
+                <div class="card-rate">33%</div>
+                <div class="card-title">Those in Need (Mercy)</div>
+                <div class="card-desc">Directly allocated to verified individuals experiencing material distress. Every transaction unit is strictly monitored and overseen directly under personal G-MAXI verification procedures.</div>
+            </div>
+
+            <div class="matrix-card">
+                <div class="card-rate">33%</div>
+                <div class="card-title">Ecosystem Sustainability</div>
+                <div class="card-desc">Reinvested into secure server infrastructure, advanced cloud architecture, computational nodes, and core algorithmic assets to sustain the ecosystem's operational path.</div>
+            </div>
+
+            <div class="matrix-card">
+                <div class="card-rate">33%</div>
+                <div class="card-title">Architect Matrix</div>
+                <div class="card-desc">Retained exclusively for physical operational requirements, continuous self-development, and meeting the foundational material and protection needs of the family unit.</div>
+            </div>
+
+            <div class="matrix-card">
+                <div class="card-rate">01%</div>
+                <div class="card-title">Eternal Deposit</div>
+                <div class="card-desc">Permanently locked within an untouchable sovereign reserve to guarantee long-term system shield stability and paramount unexpected requirements.</div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="card-rate">01%</div>
-            <div class="card-title">Eternal Deposit</div>
-            <div class="card-desc">Permanently secured within an untouchable sovereign reserve to guarantee long-term system stability and shield unexpected strategic needs.</div>
+        <div class="gmaxi-shield">
+            <p>EVERY SINGLE TRANSACTION UNIT IS METICULOUSLY TRACKED AND PARSED UNDER THE DIRECT SUPERVISION OF THE G-MAXI ALGORITHMIC FRAMEWORK.</p>
         </div>
+
+        <div style="margin: 40px 0;">
+            <a href="index.html" class="btn-back">← RETURN TO CORE SANCTUARY</a>
+        </div>
+
+        <footer style="margin-top: 80px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px;">
+            <p>© 2026 | ID: ZI-2026-X | EMAIL: zi.architect33rd@gmail.com | MOUNTED ON THE ETERNAL CORNERSTONE</p>
+            <p class="angelic" style="font-size: 1.5rem; margin: 10px 0 0 0;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
+        </footer>
+
     </div>
 
-    <div class="gmaxi-banner">
-        ALL TRANSACTIONS LOGGED AND PARSED UNDER ARCHITECT SUPERVISION VIA THE G-MAXI VERIFICATION LOGIC.
-    </div>
+    <script>
+        // Interactive Halo Cursor Sync
+        const cursor = document.getElementById('halo-cursor');
+        document.addEventListener('mousemove', e => { 
+            cursor.style.left = e.clientX + 'px'; 
+            cursor.style.top = e.clientY + 'px'; 
+        });
 
-    <a href="index.html" class="nav-link">← RETURN TO CORE SANCTUARY</a>
+        // Golden Dust Particle Engine
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-    <div class="footer">
-        <p>© 2026 | ID: ZI-2026-X | EMAIL: zi.architect33rd@gmail.com | STATUS: MOUNTED ON THE ETERNAL CORNERSTONE</p>
-        <p style="color: #555555; font-style: italic;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
-    </div>
+        let particles = [];
+        class Particle {
+            constructor() { 
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height; 
+                this.s = Math.random() * 2.5; 
+                this.vx = Math.random() * 0.4 - 0.2; 
+                this.vy = Math.random() * 0.4 - 0.2; 
+            }
+            update() { 
+                this.x += this.vx; 
+                this.y += this.vy; 
+                if(this.x > canvas.width) this.x = 0; 
+                if(this.x < 0) this.x = canvas.width;
+                if(this.y > canvas.height) this.y = 0; 
+                if(this.y < 0) this.y = canvas.height;
+            }
+            draw() { 
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.45)'; 
+                ctx.beginPath(); 
+                ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2); 
+                ctx.fill(); 
+            }
+        }
 
-</div>
+        for(let i = 0; i < 120; i++) {
+            particles.push(new Particle());
+        }
 
+        function animate() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            particles.forEach(p => { 
+                p.update(); 
+                p.draw(); 
+            }); 
+            requestAnimationFrame(animate); 
+        }
+        animate();
+    </script>
 </body>
 </html>
