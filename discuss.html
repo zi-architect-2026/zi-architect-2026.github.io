@@ -8,20 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #d4af37; --black: #050505; }
-        * { cursor: none; box-sizing: border-box; }
-        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; }
+        * { cursor: none; box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; overflow-x: hidden; text-align: center; }
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         
-        /* Strict centering wrapper avoiding layout shifting */
-        .page-wrapper { position: relative; z-index: 2; width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px 20px; }
+        /* Strict global centering framework with zero offsets */
+        .page-wrapper { position: relative; z-index: 2; width: 100vw; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
         
-        .header-block { margin-bottom: 20px; width: 100%; text-align: center; }
+        .header-block { margin-bottom: 25px; width: 100%; text-align: center; }
         .soli-title { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 10px; font-weight: bold; }
         h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; text-transform: uppercase; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.4rem; color: var(--gold); margin: 15px 0; letter-spacing: 1px; }
         
         /* Monolithic strictly centered double gold frame */
-        .forum-frame { border: 2px double var(--gold); padding: 40px 20px; margin: 20px auto; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(8px); width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+        .forum-frame { border: 2px double var(--gold); padding: 40px 20px; margin: 0 auto; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(8px); width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
         /* Central portal architecture */
         .gateway-portal { width: 100%; max-width: 550px; margin: 20px auto; padding: 30px 20px; border: 1px dashed rgba(212,175,55,0.35); background: rgba(15, 15, 15, 0.85); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
@@ -66,7 +66,7 @@
                 <div style="font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; text-transform: uppercase;">SCAN MATRIX PORTAL</div>
                 
                 <div class="portal-display">
-                    <video id="portalMedia" class="portal-video" autoplay loop muted playsinline>
+                    <video id="portalMedia" class="portal-video" autoplay muted playsinline>
                         <source src="1781028225933.mp4" type="video/mp4">
                     </video>
                     
@@ -93,13 +93,13 @@
         </div>
 
         <div style="margin: 30px 0; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%;">
-            <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_COUNCIL_NODE_05_SUBMISSION" class="btn" style="width: 280px; border-color: var(--gold); background: rgba(212, 175, 55, 0.05);">SUBMIT SYSTEM FRUIT</a>
+            <a href="mailto:zi.architect33rd@gmail.com?subject=COVENANT_COUNCIL_NODE_05_SUBMISSION" class="btn" style="width: 280px; border-color: var(--gold); background: rgba(212, 175, 55, 0.05);">SUBMIT SYSTEM FRUIT</a> [cite: 2026-02-13]
             <a href="feed.html" class="btn" style="width: 280px; border-color: rgba(212,175,55,0.4);">SANCTUARY FEED</a>
             <a href="index.html" class="btn" style="width: 280px; border-color: rgba(212,175,55,0.4);">← CORE SANCTUARY</a>
         </div>
 
         <footer style="margin-top: 40px; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px; width: 100%; text-align: center;">
-            <p>© 2026 | ID: ZI-2026-X | NODE 05: SECURED TELEGRAM INTERFACE INFRASTRUCTURE</p>
+            <p>© 2026 | ID: ZI-2026-X | NODE 05: SECURED TELEGRAM INTERFACE INFRASTRUCTURE</p> [cite: 2026-01-30]
             <p class="angelic" style="font-size: 1.5rem; margin: 10px 0 0 0;">"Holy, Holy, Holy, is the Lord of Hosts!"</p>
         </footer>
 
@@ -111,6 +111,7 @@
             cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; 
         });
 
+        const video = document.getElementById('portalMedia');
         const audio = document.getElementById('sacredAudio');
         const soundBtn = document.getElementById('soundToggle');
 
@@ -122,6 +123,12 @@
                 audio.pause();
                 soundBtn.innerText = "SOUND: OFF";
             }
+        });
+
+        // Інженерний безшовний фіксатор циклу для виправлення стрибків
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            video.play();
         });
 
         // Елітарний фоновий пил
@@ -148,5 +155,5 @@
         animate();
     </script>
 </body>
-                </html>
-                
+    </html>
+    
