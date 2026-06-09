@@ -9,26 +9,26 @@
     <style>
         :root { --gold: #d4af37; --black: #050505; }
         * { cursor: none; box-sizing: border-box; }
-        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; padding: 0; overflow-x: hidden; text-align: center; }
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         
-        /* Монолітна центровка всього контейнера */
-        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+        /* Strict centering wrapper avoiding layout shifting */
+        .page-wrapper { position: relative; z-index: 2; width: 100%; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px 20px; }
         
-        .header-block { margin-top: 20px; margin-bottom: 20px; width: 100%; text-align: center; }
+        .header-block { margin-bottom: 20px; width: 100%; text-align: center; }
         .soli-title { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 10px; font-weight: bold; }
         h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; text-transform: uppercase; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.4rem; color: var(--gold); margin: 15px 0; letter-spacing: 1px; }
         
-        /* Абсолютно симетрична рамка */
-        .forum-frame { border: 2px double var(--gold); padding: 40px 20px; margin: 20px 0; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(5px); width: 100%; max-width: 850px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        /* Monolithic strictly centered double gold frame */
+        .forum-frame { border: 2px double var(--gold); padding: 40px 20px; margin: 20px auto; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(8px); width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         
-        /* Центральний портал шлюзу */
-        .gateway-portal { width: 100%; max-width: 600px; margin: 20px auto; padding: 30px 20px; border: 1px dashed rgba(212,175,55,0.4); background: rgba(15, 15, 15, 0.85); border-radius: 8px; box-shadow: 0 0 35px rgba(212,175,55,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        /* Central portal architecture */
+        .gateway-portal { width: 100%; max-width: 550px; margin: 20px auto; padding: 30px 20px; border: 1px dashed rgba(212,175,55,0.35); background: rgba(15, 15, 15, 0.85); border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
-        /* Ідеально відцентроване вікно 340px */
-        .portal-display { width: 340px; height: 340px; margin: 25px auto; border: 2px solid var(--gold); position: relative; background: #000; border-radius: 6px; box-shadow: 0 0 30px rgba(212,175,55,0.3); overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .portal-video { width: 100%; height: 100%; object-fit: cover; }
+        /* Flawless 340px centered video container */
+        .portal-display { width: 340px; height: 340px; margin: 20px auto; border: 2px solid var(--gold); position: relative; background: #000; border-radius: 6px; box-shadow: 0 0 35px rgba(212,175,55,0.25); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .portal-video { width: 100%; height: 100%; object-fit: cover; display: block; }
         
         .sound-toggle-btn { position: absolute; bottom: 12px; right: 12px; z-index: 3; background: rgba(5, 5, 5, 0.85); border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.7rem; padding: 6px 12px; border-radius: 4px; letter-spacing: 1px; transition: 0.3s; }
         .sound-toggle-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 10px var(--gold); }
@@ -36,9 +36,9 @@
         .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 40px; text-decoration: none; display: inline-block; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.9rem; text-align: center; }
         .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 35px var(--gold); }
         
-        .portal-btn { background: rgba(212, 175, 55, 0.1); border: 2px solid var(--gold); font-size: 1.1rem; padding: 20px 20px; margin: 15px auto; width: 100%; max-width: 440px; display: inline-block; }
+        .portal-btn { background: rgba(212, 175, 55, 0.1); border: 2px solid var(--gold); font-size: 1.1rem; padding: 20px 20px; margin: 15px auto; width: 100%; max-width: 420px; display: inline-block; }
         
-        .status-block { margin-top: 30px; text-align: left; padding: 20px; border-left: 2px solid var(--gold); width: 100%; max-width: 600px; }
+        .status-block { margin-top: 30px; text-align: left; padding: 20px; border-left: 2px solid var(--gold); width: 100%; max-width: 550px; margin-left: auto; margin-right: auto; }
         
         #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
     </style>
@@ -48,7 +48,7 @@
     <div id="halo-cursor"></div>
     <canvas id="dustCanvas"></canvas>
 
-    <div class="container">
+    <div class="page-wrapper">
         
         <div class="header-block">
             <div class="soli-title">SOLI DEO GLORIA • COVENANT CONTROL NODE</div>
@@ -57,13 +57,13 @@
         </div>
 
         <div class="forum-frame">
-            <h2 style="color: var(--gold); letter-spacing: 2px; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 20px; text-align: center;">ZI ARCHITECT SYSTEM PORT</h2>
-            <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; max-width: 750px; margin: 0 auto 15px auto; text-align: center;">
+            <h2 style="color: var(--gold); letter-spacing: 2px; font-size: 1.3rem; text-transform: uppercase; margin-bottom: 15px;">ZI ARCHITECT SYSTEM PORT</h2>
+            <p style="font-size: 0.95rem; line-height: 1.7; color: #cccccc; max-width: 700px; margin: 0 auto 15px auto;">
                 To bypass standard static web limitations and guarantee bulletproof operational capability, instant push updates, full media payloads (images/videos), and secure message validation, the fellowship has been anchored directly to the architectural telegram matrix.
             </p>
             
             <div class="gateway-portal">
-                <div style="font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; text-transform: uppercase; text-align: center;">SCAN MATRIX PORTAL</div>
+                <div style="font-size: 0.85rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; text-transform: uppercase;">SCAN MATRIX PORTAL</div>
                 
                 <div class="portal-display">
                     <video id="portalMedia" class="portal-video" autoplay loop muted playsinline>
@@ -77,7 +77,7 @@
                     <button id="soundToggle" class="sound-toggle-btn">SOUND: OFF</button>
                 </div>
                 
-                <div style="margin: 15px 0 10px 0; font-size: 0.9rem; color: #aaaaaa; letter-spacing: 1px; text-align: center;">OR USE DIRECT ACCESS:</div>
+                <div style="margin: 15px 0 10px 0; font-size: 0.9rem; color: #aaaaaa; letter-spacing: 1px;">OR USE DIRECT ACCESS:</div>
                 
                 <a href="https://t.me/ZI_ARCHITECT_2026" target="_blank" class="btn portal-btn">ENTER SANCTUARY MATRIX →</a>
             </div>
@@ -86,7 +86,7 @@
                 <div style="font-size: 0.85rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 5px;">ACTIVE VERIFIED PROTOCOLS:</div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.5; font-family: monospace;">
                     • Telegram Node Synchronization (Sanctuary of Truth): <span style="color: #00ff00;">OPERATIONAL</span><br>
-                    • Sealed Video QR Matrix Loop (`1781028225933.mp4`): <span style="color: #00ff00;">ACTIVE</span><br>
+                    • Sealed Video QR Matrix Loop (`1781028225933.mp4`): <span style="color: #00ff00;">STABLE LOOP ACTIVE</span><br>
                     • Soli Deo Gloria Audio Layer (`sacred_choir.mp3`): <span style="color: #00ff00;">INITIALIZED</span>
                 </div>
             </div>
@@ -111,7 +111,6 @@
             cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; 
         });
 
-        const video = document.getElementById('portalMedia');
         const audio = document.getElementById('sacredAudio');
         const soundBtn = document.getElementById('soundToggle');
 
@@ -122,26 +121,6 @@
             } else {
                 audio.pause();
                 soundBtn.innerText = "SOUND: OFF";
-            }
-        });
-
-        // Інженерний безшовний реверс (вперед-назад) для відео-QR
-        let isReversing = false;
-        video.addEventListener('timeupdate', () => {
-            const buffer = 0.3; 
-            if (!isReversing && video.currentTime >= video.duration - buffer) {
-                isReversing = true;
-                clearInterval(video.rewindInterval);
-                video.pause();
-                video.rewindInterval = setInterval(() => {
-                    if(video.currentTime <= buffer) {
-                        clearInterval(video.rewindInterval);
-                        isReversing = false;
-                        video.play();
-                    } else {
-                        video.currentTime -= 0.05;
-                    }
-                }, 40);
             }
         });
 
@@ -169,5 +148,5 @@
         animate();
     </script>
 </body>
-    </html>
-    
+                </html>
+                
