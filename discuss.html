@@ -22,7 +22,7 @@
         
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         
-        /* Глобальний жорсткий каркас центровки */
+        /* Rigid mathematical cross-device centering matrix */
         .page-wrapper { 
             position: relative; 
             z-index: 2; 
@@ -32,19 +32,19 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            padding: 20px 10px;
+            padding: 30px 10px;
         }
         
-        .header-block { width: 100%; text-align: center; margin-bottom: 15px; }
+        .header-block { width: 100%; text-align: center; margin-bottom: 20px; }
         .soli-title { font-size: 0.85rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 8px; font-weight: bold; }
         h1 { font-size: 1.9rem; letter-spacing: 4px; margin: 5px 0; text-transform: uppercase; }
         .angelic { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); margin: 10px 0; }
         
-        /* Монолітна, ізольована від зовнішніх зсувів подвійна золота рамка */
+        /* Monolithic double gold border protected from shifts */
         .forum-frame { 
             border: 2px double var(--gold); 
-            padding: 30px 15px; 
-            background: rgba(5, 5, 5, 0.97); 
+            padding: 35px 20px; 
+            background: rgba(5, 5, 5, 0.98); 
             backdrop-filter: blur(10px); 
             width: 100%; 
             max-width: 760px; 
@@ -55,12 +55,11 @@
             justify-content: center;
         }
         
-        /* Внутрішній шлюз порталу */
         .gateway-portal { 
             width: 100%; 
             max-width: 480px; 
             margin: 15px auto; 
-            padding: 20px 10px; 
+            padding: 20px 15px; 
             border: 1px dashed rgba(212,175,55,0.3); 
             background: rgba(15, 15, 15, 0.9); 
             border-radius: 8px; 
@@ -70,11 +69,11 @@
             justify-content: center; 
         }
         
-        /* Абсолютно симетричний контейнер для mp4 */
+        /* Perfectly squared and isolated viewport */
         .portal-display { 
             width: 320px; 
             height: 320px; 
-            margin: 15px auto; 
+            margin: 20px auto; 
             border: 2px solid var(--gold); 
             position: relative; 
             background: #000; 
@@ -103,7 +102,7 @@
             color: var(--gold); 
             font-family: 'Cinzel', serif; 
             font-size: 0.65rem; 
-            padding: 5px 10px; 
+            padding: 6px 12px; 
             border-radius: 4px; 
             letter-spacing: 1px; 
             transition: 0.3s; 
@@ -113,7 +112,7 @@
         .btn { 
             border: 1px solid var(--gold); 
             color: var(--gold); 
-            padding: 15px 30px; 
+            padding: 15px 35px; 
             text-decoration: none; 
             display: inline-block; 
             transition: 0.4s; 
@@ -173,11 +172,11 @@
                 <div style="font-size: 0.8rem; color: var(--gold); letter-spacing: 2px; font-weight: bold; text-transform: uppercase;">SCAN MATRIX PORTAL</div>
                 
                 <div class="portal-display">
-                    <video id="portalMedia" class="portal-video" autoplay loop muted playsinline>
+                    <video id="portalMedia" class="portal-video" autoplay muted playsinline preload="auto">
                         <source src="1781028225933.mp4" type="video/mp4">
                     </video>
                     
-                    <audio id="sacredAudio" loop>
+                    <audio id="sacredAudio" loop preload="auto">
                         <source src="sacred_choir.mp3" type="audio/mpeg">
                     </audio>
                     
@@ -193,8 +192,8 @@
                 <div style="font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 4px;">ACTIVE VERIFIED PROTOCOLS:</div>
                 <div style="font-size: 0.85rem; color: #ffffff; line-height: 1.4; font-family: monospace;">
                     • Telegram Node Synchronization (Sanctuary of Truth): <span style="color: #00ff00;">OPERATIONAL</span><br>
-                    • Sealed Video QR Matrix Loop (`1781028225933.mp4`): <span style="color: #00ff00;">STABLE LOOP ACTIVE</span><br>
-                    • Soli Deo Gloria Audio Layer (`sacred_choir.mp3`): <span style="color: #00ff00;">INITIALIZED</span>
+                    • Sealed Video QR Matrix Loop (`1781028225933.mp4`): <span style="color: #00ff00;">STABLE LAYER ACTIVE</span><br>
+                    • Soli Deo Gloria Audio Layer (`sacred_choir.mp3`): <span style="color: #00ff00;">ONLINE</span>
                 </div>
             </div>
         </div>
@@ -232,7 +231,20 @@
             }
         });
 
-        // Елітарний фоновий пил
+        // Високоточний апаратний інтервал для усунення стрибків на мобільних пристроях
+        setInterval(() => {
+            if (video.currentTime >= 13.8) {
+                video.currentTime = 0.0;
+                video.play().catch(() => {});
+            }
+        }, 100);
+
+        video.addEventListener('ended', () => {
+            video.currentTime = 0.0;
+            video.play().catch(() => {});
+        });
+
+        // Фоновий пил архітектури
         const canvas = document.getElementById('dustCanvas');
         const ctx = canvas.getContext('2d');
         function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
@@ -256,4 +268,5 @@
         animate();
     </script>
 </body>
-</html>
+    </html>
+    
