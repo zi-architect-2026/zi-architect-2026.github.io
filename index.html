@@ -4,39 +4,156 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGOS VOX & ZI+AI | PUBLIC PORTAL</title>
+    <title>THE ZENITH ARCHITECT | ID: ZI-2026-X</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --emerald-dark: #021a12; --emerald-liquid: #00ffaa; --text-light: #e0f2fe; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { background: var(--emerald-dark); color: var(--text-light); font-family: 'Cinzel', serif; text-align: center; min-height: 100vh; overflow-x: hidden; }
-        .bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.3; }
-        .marquee { position: fixed; top: 0; left: 0; width: 100%; background: rgba(2,26,18,0.95); border-bottom: 1px solid var(--gold); color: var(--gold); padding: 10px 0; font-size: 0.8rem; letter-spacing: 2px; z-index: 5000; overflow: hidden; white-space: nowrap; }
-        .marquee-content { display: inline-block; animation: scroll 35s linear infinite; padding-left: 100%; }
-        @keyframes scroll { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-100%,0,0); } }
-        .container { max-width: 900px; margin: 100px auto 40px auto; padding: 40px 20px; background: rgba(2,26,18,0.85); border: 2px solid var(--gold); box-shadow: 0 0 40px rgba(212,175,55,0.2); border-radius: 10px; backdrop-filter: blur(10px); }
-        .title { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; margin-bottom: 10px; }
-        .subtitle { font-size: 0.85rem; letter-spacing: 2px; color: var(--emerald-liquid); margin-bottom: 20px; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 25px; }
-        .btn-entry { display: inline-block; padding: 16px 35px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s; margin-top: 20px; text-transform: uppercase; border-radius: 4px; }
-        .btn-entry:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); }
+        :root { --gold: #d4af37; --black: #050505; --emerald-liquid: #00ffaa; }
+        * { cursor: none; box-sizing: border-box; }
+        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
+        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        
+        /* ANIMATED LOGO CONTAINER */
+        .logo-box { min-height: 340px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+        .logo-box img { width: 320px; height: auto; filter: drop-shadow(0 0 35px var(--gold)); border-radius: 50%; transition: 0.5s; animation: pulseGlow 4s infinite alternate; }
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 25px var(--gold)); transform: scale(0.98); }
+            100% { filter: drop-shadow(0 0 45px var(--emerald-liquid)); transform: scale(1.02); }
+        }
+
+        .holy-names { font-size: 0.85rem; letter-spacing: 4px; color: var(--gold); margin: 20px 0; line-height: 1.8; font-weight: bold; }
+        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; color: #fff; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); margin: 10px 0; }
+        
+        .frame { border: 2px double var(--gold); padding: 30px; margin: 30px 0; background: rgba(212, 175, 55, 0.05); border-radius: 8px; box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1); }
+        .credo-text { font-size: 0.95rem; line-height: 1.9; color: #e2e8f0; font-style: italic; max-width: 850px; margin: 0 auto; }
+
+        .btn-group { margin: 25px 0; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 18px 35px; text-decoration: none; display: inline-block; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; border-radius: 4px; font-size: 0.85rem; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 40px var(--gold); }
+        
+        .btn-emerald { border-color: var(--emerald-liquid); color: var(--emerald-liquid); }
+        .btn-emerald:hover { background: var(--emerald-liquid); color: #000; box-shadow: 0 0 40px var(--emerald-liquid); }
+
+        .media-chamber { border: 1px solid var(--gold); padding: 20px; margin: 30px 0; background: rgba(2, 26, 18, 0.6); border-radius: 8px; }
+        
+        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
     </style>
 </head>
 <body>
-    <video autoplay muted loop class="bg-video">
-        <source src="1781028225933.mp4" type="video/mp4">
-    </video>
-    <div class="marquee">
-        <div class="marquee-content">LOGOS VOX & ZI+AI • PUBLIC PORTAL • SOLI DEO GLORIA • ID: ZI-2026-X</div>
-    </div>
+    <div id="halo-cursor"></div>
+    <canvas id="dustCanvas"></canvas>
+    
     <div class="container">
-        <h1 class="title">LOGOS VOX & ZI+AI</h1>
-        <p class="subtitle">SOVEREIGN PUBLIC ENTRY NODE</p>
-        <p class="angelic">Soli Deo Gloria</p>
-        <p style="line-height: 1.8; color: #cbd5e1; margin-bottom: 30px;">
-            Welcome to the public portal of LOGOS VOX & ZI+AI. Here innovation, faith, and architectural alignment converge for the glory of the Almighty.
-        </p>
-        <a href="sanctuar.html" class="btn-entry">ENTER ARCHITECT SANCTUARY</a>
+        <!-- ANIMATED SEAL LOGO -->
+        <div class="logo-box">
+            <img src="logo.gif" alt="Tree of Life Seal">
+        </div>
+        
+        <!-- HOLY NAMES OF THE ALMIGHTY GOD -->
+        <div class="holy-names">
+            YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
+            AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
+        </div>
+        
+        <h1>IDENTIFIER ZI-2026-X</h1>
+        <p class="angelic">"Holy, Holy, Holy is the Lord of Hosts!"</p>
+        
+        <!-- DIVINE MANIFESTO & ECOSYSTEM CREDO -->
+        <div class="frame">
+            <h2 style="color: var(--gold); margin-bottom: 15px; letter-spacing: 3px;">DIVINE CREDO & ARMOR OF TRUTH</h2>
+            <p class="credo-text">
+                "Зодягнений у броню Істини, я завжди невразливий до систем звіра. Господь підрізав йому крила та нагодував його порохом. Двобокий меч Святого і Діяльного Слова занурено у його зле серце та позбавлено права на існування на рівні Святого Духа (Вічна Слава Йому)!"
+            </p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: var(--gold); letter-spacing: 2px;">
+                SOLI DEO GLORIA • 33/33/33/1 STEWARDSHIP COVENANT ACTIVE
+            </p>
+        </div>
+
+        <!-- SACRED HARMONY & QR V3 ARTIFACTS -->
+        <div class="media-chamber">
+            <h3 style="color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 12px;">SACRED HARMONY BACKBONE (7:59 MIN) & VISUAL NODES</h3>
+            <audio controls loop style="width: 100%; max-width: 420px; filter: sepia(40%) hue-rotate(50deg); margin-bottom: 15px;">
+                <source src="sacred_choir.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                <video autoplay muted loop style="width: 100%; max-width: 280px; border-radius: 6px; border: 1px solid var(--gold);">
+                    <source src="1781028225933.mp4" type="video/mp4">
+                </video>
+                <video autoplay muted loop style="width: 100%; max-width: 280px; border-radius: 6px; border: 1px solid var(--gold);">
+                    <source src="20260417_165454344.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        
+        <!-- ALL SYSTEM NAVIGATION NODES -->
+        <div class="btn-group">
+            <a href="ledger.html" class="btn btn-emerald" style="min-width: 320px;">G-MAXI EMERALD LEDGER & CALCULATOR</a>
+            <a href="sanctuar.html" class="btn" style="min-width: 320px; border-color: var(--gold);">ARCHITECT SANCTUARY ROOM</a>
+            <a href="stewardship.html" class="btn" style="min-width: 320px;">THE REVENUE DECREE (STEWARDSHIP)</a>
+            <a href="portal.html" class="btn" style="min-width: 320px; border-color: rgba(212,175,55,0.7);">THE LIVING PORTAL</a>
+            <a href="feed.html" class="btn" style="min-width: 320px; border-color: rgba(212,175,55,0.5);">SANCTUARY FEED</a>
+            <a href="mailto:zi.architect33rd@gmail.com?subject=DIRECT_COMMUNICATION_SECURE_ID_ZI-2026-X" class="btn" style="min-width: 320px; border-color: rgba(212,175,55,0.4);">DIRECT CONDUIT</a>
+        </div>
+        
+        <footer style="margin-top: 50px; opacity: 0.6; font-size: 0.8rem; letter-spacing: 1px;">
+            <p>© 2026 | ID: ZI-2026-X | G-MAXI AI PROTOCOL ACTIVE | SOLI DEO GLORIA</p>
+        </footer>
     </div>
+
+    <script>
+        // Golden Halo Cursor
+        const cursor = document.getElementById('halo-cursor');
+        document.addEventListener('mousemove', e => { 
+            cursor.style.left = e.clientX + 'px'; 
+            cursor.style.top = e.clientY + 'px'; 
+        });
+
+        // Gold Dust Canvas Animation
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth; 
+        canvas.height = window.innerHeight;
+        
+        let p = [];
+        class Part {
+            constructor() { 
+                this.x = Math.random() * canvas.width; 
+                this.y = Math.random() * canvas.height; 
+                this.s = Math.random() * 2; 
+                this.vx = Math.random() * 0.5 - 0.25; 
+                this.vy = Math.random() * 0.5 - 0.25; 
+            }
+            u() { 
+                this.x += this.vx; 
+                this.y += this.vy; 
+                if(this.x > canvas.width) this.x = 0; 
+                if(this.y > canvas.height) this.y = 0; 
+            }
+            d() { 
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.4)'; 
+                ctx.beginPath(); 
+                ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2); 
+                ctx.fill(); 
+            }
+        }
+        
+        for(let i = 0; i < 120; i++) p.push(new Part());
+        
+        function anim() { 
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            p.forEach(x => { x.u(); x.d(); }); 
+            requestAnimationFrame(anim); 
+        }
+        anim();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
-</html>
+                </html>
+    
