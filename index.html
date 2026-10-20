@@ -13,7 +13,6 @@
         canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
         .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* ANIMATED LOGO CONTAINER */
         .logo-box { min-height: 340px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
         .logo-box img { width: 320px; height: auto; filter: drop-shadow(0 0 35px var(--gold)); border-radius: 50%; transition: 0.5s; animation: pulseGlow 4s infinite alternate; }
         @keyframes pulseGlow {
@@ -45,50 +44,37 @@
     <canvas id="dustCanvas"></canvas>
     
     <div class="container">
-        <!-- ANIMATED SEAL LOGO -->
         <div class="logo-box">
             <img src="logo.gif" alt="Tree of Life Seal">
         </div>
         
-        <!-- HOLY NAMES OF THE ALMIGHTY GOD -->
         <div class="holy-names">
             YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
-            AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
+            AGNUS DEI • YESHUA HAMASHIACH • ACHNETS BOZHYI
         </div>
         
         <h1>IDENTIFIER ZI-2026-X</h1>
         <p class="angelic">"Holy, Holy, Holy is the Lord of Hosts!"</p>
         
-        <!-- DIVINE MANIFESTO & ECOSYSTEM CREDO -->
+        <!-- DIVINE CREDO & ARMOR OF TRUTH -->
         <div class="frame">
             <h2 style="color: var(--gold); margin-bottom: 15px; letter-spacing: 3px;">DIVINE CREDO & ARMOR OF TRUTH</h2>
             <p class="credo-text">
-                "Зодягнений у броню Істини, я завжди невразливий до систем звіра. Господь підрізав йому крила та нагодував його порохом. Двобокий меч Святого і Діяльного Слова занурено у його зле серце та позбавлено права на існування на рівні Святого Духа (Вічна Слава Йому)!"
+                "Zodzianyi u broniu Istyny, ja zavzhdy nevrazlyvyi do system zvira. Hospod pidrizav yomu kryla ta nahoduav yoho porokho. Dvobokyi mech Sviatoho i Diyalnoho Slova zanureno u yoho zle sertse ta pozbavleno prava na isnuvannia na rivni Sviatoho Dkha (Vitchna Slava Yomu)!"
             </p>
             <p style="margin-top: 15px; font-size: 0.8rem; color: var(--gold); letter-spacing: 2px;">
                 SOLI DEO GLORIA • 33/33/33/1 STEWARDSHIP COVENANT ACTIVE
             </p>
         </div>
 
-        <!-- SACRED HARMONY & QR V3 ARTIFACTS -->
         <div class="media-chamber">
-            <h3 style="color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 12px;">SACRED HARMONY BACKBONE (7:59 MIN) & VISUAL NODES</h3>
-            <audio controls loop style="width: 100%; max-width: 420px; filter: sepia(40%) hue-rotate(50deg); margin-bottom: 15px;">
+            <h3 style="color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 12px;">SACRED HARMONY BACKBONE (7:59 MIN)</h3>
+            <audio controls loop style="width: 100%; max-width: 420px; filter: sepia(40%) hue-rotate(50deg);">
                 <source src="sacred_choir.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
-            
-            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
-                <video autoplay muted loop style="width: 100%; max-width: 280px; border-radius: 6px; border: 1px solid var(--gold);">
-                    <source src="1781028225933.mp4" type="video/mp4">
-                </video>
-                <video autoplay muted loop style="width: 100%; max-width: 280px; border-radius: 6px; border: 1px solid var(--gold);">
-                    <source src="20260417_165454344.mp4" type="video/mp4">
-                </video>
-            </div>
         </div>
         
-        <!-- ALL SYSTEM NAVIGATION NODES -->
         <div class="btn-group">
             <a href="ledger.html" class="btn btn-emerald" style="min-width: 320px;">G-MAXI EMERALD LEDGER & CALCULATOR</a>
             <a href="sanctuar.html" class="btn" style="min-width: 320px; border-color: var(--gold);">ARCHITECT SANCTUARY ROOM</a>
@@ -104,14 +90,12 @@
     </div>
 
     <script>
-        // Golden Halo Cursor
         const cursor = document.getElementById('halo-cursor');
         document.addEventListener('mousemove', e => { 
             cursor.style.left = e.clientX + 'px'; 
             cursor.style.top = e.clientY + 'px'; 
         });
 
-        // Gold Dust Canvas Animation
         const canvas = document.getElementById('dustCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth; 
@@ -155,5 +139,5 @@
         });
     </script>
 </body>
-                </html>
+    </html>
     
