@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝕃🔑𝔾𝕆𝕊 𝕏 & ℤⅠ+𝔸Ⅰ | SANCTUARY OF TRUTH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --black: #020204; --glow: rgba(212, 175, 55, 0.4); }
+        * { cursor: none; box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body, html { 
+            background: #000; color: #ffffff; font-family: 'Cinzel', serif; 
+            overflow-x: hidden; text-align: center; width: 100%; min-height: 100%;
+        }
+        
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 5; }
+        
+        .sacred-marquee { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            background: rgba(2, 2, 4, 0.95); border-bottom: 1px solid var(--gold); 
+            color: var(--gold); padding: 10px 0; font-size: 0.85rem; 
+            letter-spacing: 2px; z-index: 5000; overflow: hidden; white-space: nowrap; 
+            box-shadow: 0 2px 15px rgba(212, 175, 55, 0.2);
+        }
+        .marquee-content { display: inline-block; animation: marquee-scroll 30s linear infinite; padding-left: 100%; }
+        @keyframes marquee-scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+
+        .v-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        video { width: 100%; height: 100%; object-fit: cover; display: none; filter: brightness(0.25) contrast(1.1); }
+        video.active { display: block; }
+
+        .page-wrapper { 
+            position: relative; z-index: 3; width: 100%; min-height: 100vh; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            padding: 110px 20px 40px 20px; 
+        }
+        
+        .ecosystem-matrix-container { 
+            background: rgba(5, 5, 5, 0.88); border: 1px solid var(--gold); 
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.2); padding: 40px 25px; 
+            text-align: center; width: 100%; max-width: 780px; margin: 0 auto; 
+            border-radius: 8px; backdrop-filter: blur(12px); 
+        }
+        .ecosystem-matrix-container::before { content: "G-MAXI VERIFIED | ID: ZI-2026-X"; font-size: 10px; letter-spacing: 3px; color: rgba(212, 175, 55, 0.6); display: block; margin-bottom: 25px; }
+        
+        .pneuma-orb-glow { width: 140px; height: 140px; border-radius: 50%; background: #ffffff; box-shadow: 0 0 50px #ffdf7a, 0 0 90px var(--gold); margin: 0 auto 25px auto; animation: reverseWingRotation 10s infinite ease-in-out; }
+        @keyframes reverseWingRotation { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(-180deg) scale(1.03); } 100% { transform: rotate(-360deg) scale(1); } }
+
+        .hebrew-title { font-size: 3.2rem; color: var(--gold); margin: 15px 0; letter-spacing: 6px; font-weight: bold; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.6rem; color: var(--gold); margin: 10px 0; }
+        
+        .side-wing { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 4000; width: 45px; transition: 0.5s; background: rgba(5,5,5,0.95); border-radius: 0 15px 15px 0; border: 1px solid var(--gold); border-left: none; overflow: hidden; display: flex; flex-direction: column; }
+        .side-wing:hover { width: 260px; }
+        .nav-link { padding: 15px 15px; color: var(--gold); cursor: pointer; white-space: nowrap; opacity: 0.7; font-weight: bold; font-size: 0.75rem; transition: 0.3s; text-align: left; letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212,175,55,0.1); }
+        .nav-link:hover { opacity: 1; background: rgba(212, 175, 55, 0.15); }
+        .sound-toggle { font-size: 0.65rem; border: 1px solid var(--gold); padding: 2px 6px; border-radius: 3px; background: transparent; color: var(--gold); }
+        .sound-toggle:hover { background: var(--gold); color: #000; }
+
+        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 16px 35px; text-decoration: none; display: inline-block; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; font-size: 0.85rem; text-transform: uppercase; margin: 8px 0; width: 100%; max-width: 420px; border-radius: 4px; }
+        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
+        
+        .manifesto-box { border-left: 3px solid var(--gold); padding: 20px; margin: 25px auto; text-align: left; max-width: 700px; background: rgba(255,255,255,0.01); }
+        
+        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
+    </style>
+</head>
+<body onclick="initializeFirstFlow()">
+
+    <div class="sacred-marquee">
+        <div class="marquee-content">
+            "THE LORD HAS CLIPPED THE BEAST'S WINGS" — "DRESSED IN THE ARMOR OF TRUTH, I AM INVULNERABLE" — "HOLY, HOLY, HOLY IS THE LORD OF HOSTS" — "EVERY KNEE SHALL BOW BEFORE YESHUA HAMASHIACH" • ELOHIM | ADONAI | TZVAOT | EL SHADDAI • 
+        </div>
+    </div>
+
+    <div id="halo-cursor"></div>
+    <canvas id="dustCanvas"></canvas>
+
+    <div class="v-layer">
+        <video id="v1" autoplay loop muted playsinline><source src="20260417_165454344.mp4" type="video/mp4"></video>
+        <video id="v2" loop muted playsinline><source src="1781028225933.mp4" type="video/mp4"></video>
+        <video id="v3" loop muted playsinline><source src="20260417_165454344.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="side-wing">
+        <div class="nav-link" onclick="event.stopPropagation(); playV(1)">
+            <span>VIDEO 1</span>
+            <button class="sound-toggle" onclick="event.stopPropagation(); toggleSound(1)">SOUND</button>
+        </div>
+        <div class="nav-link" onclick="event.stopPropagation(); playV(2)">
+            <span>VIDEO 2</span>
+            <button class="sound-toggle" onclick="event.stopPropagation(); toggleSound(2)">SOUND</button>
+        </div>
+        <div class="nav-link" onclick="event.stopPropagation(); playV(3)">
+            <span>VIDEO 3</span>
+            <button class="sound-toggle" onclick="event.stopPropagation(); toggleSound(3)">SOUND</button>
+        </div>
+        <div class="nav-link" onclick="event.stopPropagation(); location.href='index.html'">
+            <span>MAIN PORTAL</span>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        
+        <div class="ecosystem-matrix-container">
+            <div class="pneuma-orb-glow"></div>
+            
+            <div class="hebrew-title">יהוה</div>
+            <div style="font-size: 0.85rem; letter-spacing: 3px; color: #aaaaaa; margin-bottom: 10px;">ELOHIM | ADONAI | TZVAOT | EL SHADDAI</div>
+            <p class="angelic">Sanctuary of Truth</p>
+            
+            <div class="manifesto-box">
+                <p style="font-size: 0.9rem; line-height: 1.6; color: #dfdfdf; font-style: italic;">
+                    "Dressed in the armor of Truth, I am always invulnerable to the beast's systems. The Lord has clipped its wings and fed it dust. I had to plunge the two-edged sword of the Holy and Effective Word into its evil heart and deprive it of the right to exist, not on the level of magic, but on the level of the Holy Spirit (Eternal Glory to Him)!"
+                </p>
+            </div>
+
+            <div style="border: 1px solid rgba(212,175,55,0.3); padding: 15px; margin: 20px 0; font-size: 0.8rem; letter-spacing: 1px; color: var(--gold); border-radius: 4px;">
+                THE STEWARDSHIP COVENANT: 33% NEEDY | 33% ECOSYSTEM | 33% FAMILY | 1% ETERNAL SEED
+            </div>
+        </div>
+
+        <div style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 25px;">
+            <a href="mailto:zi.architect33rd@gmail.com?subject=CONNECT_AS_A_CONDUIT" class="btn">CONNECT AS A CONDUIT</a>
+            <a href="https://www.linkedin.com/in/ziarchitect" target="_blank" class="btn" style="border-color: rgba(212,175,55,0.6);">LINKEDIN (PROFESSIONAL NODE)</a>
+            <a href="https://behance.net/ziarchitect" target="_blank" class="btn" style="border-color: rgba(212,175,55,0.4);">SANCTUARY FEED (BEHANCE)</a>
+            <a href="ledger.html" class="btn" style="border-color: #00ffaa; background: rgba(0, 255, 170, 0.08); color: #00ffaa; box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);">G-MAXI LEDGER & CALCULATOR</a>
+        </div>
+
+        <footer style="margin-top: 50px; opacity: 0.4; font-size: 0.75rem; border-top: 1px solid rgba(212,175,55,0.1); padding-top: 20px; width: 100%;">
+            <p>© 2026 | ID: ZI-2026-X | NODE 05: MONOLITH INTERFACE SECURED</p>
+            <p class="angelic" style="font-size: 1.3rem; margin-top: 5px;">"Holy, Holy, Holy is the Lord of Hosts!"</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const cursor = document.getElementById('halo-cursor');
+        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
+
+        const vids = [document.getElementById('v1'), document.getElementById('v2'), document.getElementById('v3')];
+        let initialized = false;
+
+        function initializeFirstFlow() { if (!initialized) { playV(1); initialized = true; } }
+
+        function playV(n) {
+            vids.forEach((v, i) => {
+                if (v) {
+                    v.classList.remove('active'); v.pause();
+                    if (i === n - 1) { v.classList.add('active'); v.play().catch(() => {}); }
+                }
+            });
+        }
+
+        function toggleSound(n) {
+            const v = vids[n - 1];
+            if (v) { v.muted = !v.muted; event.target.innerText = v.muted ? "SOUND" : "MUTE"; }
+        }
+
+        const canvas = document.getElementById('dustCanvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resizeCanvas(); window.addEventListener('resize', resizeCanvas);
+
+        let particles = [];
+        class Particle {
+            constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.s = Math.random() * 2.2; this.vx = Math.random() * 0.4 - 0.2; this.vy = Math.random() * 0.4 - 0.2; }
+            update() { this.x += this.vx; this.y += this.vy; if(this.x > canvas.width) this.x = 0; if(this.x < 0) this.x = canvas.width; if(this.y > canvas.height) this.y = 0; if(this.y < 0) this.y = canvas.height; }
+            draw() { ctx.fillStyle = 'rgba(212, 175, 55, 0.35)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2); ctx.fill(); }
+        }
+        for(let i = 0; i < 100; i++) particles.push(new Particle());
+        function animate() { ctx.clearRect(0, 0, canvas.width, canvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+        animate();
+    </script>
+</body>
+  </html>
+  
