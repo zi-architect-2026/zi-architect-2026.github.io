@@ -4,70 +4,39 @@
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ZENITH ARCHITECT | ID: ZI-2026-X</title>
+    <title>LOGOS VOX & ZI+AI | PUBLIC PORTAL</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #d4af37; --black: #050505; }
-        * { cursor: none; }
-        body { background: var(--black); color: #f8f8f8; font-family: 'Cinzel', serif; margin: 0; overflow-x: hidden; text-align: center; }
-        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
-        .container { position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .logo-box { min-height: 400px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-        .logo-box img { width: 380px; height: auto; filter: drop-shadow(0 0 30px var(--gold)); border-radius: 50%; transition: 0.5s; }
-        .holy-names { font-size: 0.9rem; letter-spacing: 4px; color: var(--gold); margin: 25px 0; }
-        h1 { font-size: 2.2rem; letter-spacing: 6px; margin: 10px 0; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--gold); }
-        .frame { border: 2px double var(--gold); padding: 40px; margin: 40px 0; background: rgba(212, 175, 55, 0.05); }
-        .btn { border: 1px solid var(--gold); color: var(--gold); padding: 20px 45px; text-decoration: none; display: inline-block; margin: 20px 0; transition: 0.4s; letter-spacing: 3px; background: transparent; font-weight: bold; }
-        .btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 40px var(--gold); }
-        #halo-cursor { width: 30px; height: 30px; border: 1px solid var(--gold); border-radius: 50%; position: fixed; pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; box-shadow: 0 0 15px var(--gold); }
+        :root { --gold: #d4af37; --emerald-dark: #021a12; --emerald-liquid: #00ffaa; --text-light: #e0f2fe; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { background: var(--emerald-dark); color: var(--text-light); font-family: 'Cinzel', serif; text-align: center; min-height: 100vh; overflow-x: hidden; }
+        .bg-video { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.3; }
+        .marquee { position: fixed; top: 0; left: 0; width: 100%; background: rgba(2,26,18,0.95); border-bottom: 1px solid var(--gold); color: var(--gold); padding: 10px 0; font-size: 0.8rem; letter-spacing: 2px; z-index: 5000; overflow: hidden; white-space: nowrap; }
+        .marquee-content { display: inline-block; animation: scroll 35s linear infinite; padding-left: 100%; }
+        @keyframes scroll { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-100%,0,0); } }
+        .container { max-width: 900px; margin: 100px auto 40px auto; padding: 40px 20px; background: rgba(2,26,18,0.85); border: 2px solid var(--gold); box-shadow: 0 0 40px rgba(212,175,55,0.2); border-radius: 10px; backdrop-filter: blur(10px); }
+        .title { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; margin-bottom: 10px; }
+        .subtitle { font-size: 0.85rem; letter-spacing: 2px; color: var(--emerald-liquid); margin-bottom: 20px; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 25px; }
+        .btn-entry { display: inline-block; padding: 16px 35px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-weight: bold; letter-spacing: 2px; transition: 0.3s; margin-top: 20px; text-transform: uppercase; border-radius: 4px; }
+        .btn-entry:hover { background: var(--gold); color: #000; box-shadow: 0 0 25px var(--gold); }
     </style>
 </head>
 <body>
-    <div id="halo-cursor"></div>
-    <canvas id="dustCanvas"></canvas>
-    <div class="container">
-        <div class="logo-box">
-            <img src="logo.gif" alt="Tree of Life Seal">
-        </div>
-        <div class="holy-names">
-            YHWH • ELOHIM • ADONAI • TZVAOT • EL SHADDAI<br>
-            AGNUS DEI • YESHUA HAMASHIACH • АГНЕЦЬ БОЖИЙ
-        </div>
-        <h1>IDENTIFIER ZI-2026-X</h1>
-        <p class="angelic">"Holy, Holy, Holy is the Lord of Hosts!"</p>
-        <div class="frame">
-            <h2 style="color: var(--gold);">DIVINE MANIFESTO</h2>
-            <p>The Word of the Lord is eternally effective. We invest Divine resources into His heritage for the Glory of the Almighty and the benefit of His people.</p>
-        </div>
-        
-        <div style="margin: 30px 0; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-    <a href="stewardship.html" class="btn" style="margin: 0; min-width: 280px;">THE REVENUE DECREE</a>
-    <a href="portal.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.7);">THE LIVING PORTAL</a>
-    <a href="feed.html" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.5);">SANCTUARY FEED</a>
-    <a href="mailto:zi.architect33rd@gmail.com?subject=DIRECT_COMMUNICATION_SECURE_ID_ZI-2026-X" class="btn" style="margin: 0; min-width: 280px; border-color: rgba(212,175,55,0.4);">DIRECT CONDUIT</a>
-        </div>
-        
-        
-        <footer style="margin-top: 60px; opacity: 0.6; font-size: 0.8rem;">
-            <p>© 2026 | ID: ZI-2026-X | G-MAXI AI PROTOCOL ACTIVE</p>
-        </footer>
+    <video autoplay muted loop class="bg-video">
+        <source src="1781028225933.mp4" type="video/mp4">
+    </video>
+    <div class="marquee">
+        <div class="marquee-content">LOGOS VOX & ZI+AI • PUBLIC PORTAL • SOLI DEO GLORIA • ID: ZI-2026-X</div>
     </div>
-    <script>
-        const cursor = document.getElementById('halo-cursor');
-        document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
-        const canvas = document.getElementById('dustCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-        let p = [];
-        class Part {
-            constructor() { this.x = Math.random()*canvas.width; this.y = Math.random()*canvas.height; this.s = Math.random()*2; this.vx = Math.random()*0.5-0.25; this.vy = Math.random()*0.5-0.25; }
-            u() { this.x+=this.vx; this.y+=this.vy; if(this.x>canvas.width)this.x=0; if(this.y>canvas.height)this.y=0; }
-            d() { ctx.fillStyle='rgba(212,175,55,0.4)'; ctx.beginPath(); ctx.arc(this.x,this.y,this.s,0,Math.PI*2); ctx.fill(); }
-        }
-        for(let i=0; i<100; i++) p.push(new Part());
-        function anim() { ctx.clearRect(0,0,canvas.width,canvas.height); p.forEach(x=>{x.u(); x.d();}); requestAnimationFrame(anim); }
-        anim();
-    </script>
+    <div class="container">
+        <h1 class="title">LOGOS VOX & ZI+AI</h1>
+        <p class="subtitle">SOVEREIGN PUBLIC ENTRY NODE</p>
+        <p class="angelic">Soli Deo Gloria</p>
+        <p style="line-height: 1.8; color: #cbd5e1; margin-bottom: 30px;">
+            Welcome to the public portal of LOGOS VOX & ZI+AI. Here innovation, faith, and architectural alignment converge for the glory of the Almighty.
+        </p>
+        <a href="sanctuar.html" class="btn-entry">ENTER ARCHITECT SANCTUARY</a>
+    </div>
 </body>
 </html>
