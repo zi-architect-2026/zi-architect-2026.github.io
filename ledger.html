@@ -1,38 +1,288 @@
-<!-- PATRON CONTRIBUTION & BANKING CONDUIT -->
-<div class="patron-chamber">
-    <div class="patron-title">PATRON CONTRIBUTION & BANKING CONDUIT</div>
-    
-    <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--gold); padding: 15px; border-radius: 6px; margin-bottom: 20px; text-align: center;">
-        <p style="font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; margin-bottom: 5px;">OFFICIAL SECURE BANKING / REQUISITES:</p>
-        <p style="font-size: 0.95rem; color: var(--emerald-liquid); font-weight: bold; word-break: break-all;">IBAN / CARD: [ ВСТАВТЕ СВІЙ IBAN АБО НОМЕР КАРТКИ ТУТ ]</p>
-        <p style="font-size: 0.75rem; color: #cbd5e1; margin-top: 5px;">Linked to verified conduit: zi.architekt33rd@gmail.com</p>
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-MAXI LEDGER | OBSIDIAN ZI-RECEIPT GENERATOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --gold: #d4af37; 
+            --emerald-dark: #021a12; 
+            --emerald-glow: #042b1e; 
+            --emerald-liquid: #00ffaa;
+            --neon-yellow: #fde047;
+            --obsidian-black: #080808;
+            --text-light: #e0f2fe;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body, html { 
+            background: radial-gradient(circle, var(--emerald-glow) 0%, var(--emerald-dark) 100%); 
+            color: var(--text-light); 
+            font-family: 'Cinzel', serif; 
+            overflow-x: hidden; 
+            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .marquee { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            background: rgba(2, 26, 18, 0.95); border-bottom: 1px solid var(--gold); 
+            color: var(--gold); padding: 10px 0; font-size: 0.8rem; 
+            letter-spacing: 2px; z-index: 5000; overflow: hidden; white-space: nowrap; 
+        }
+        .marquee-content { display: inline-block; animation: scroll 35s linear infinite; padding-left: 100%; }
+        @keyframes scroll { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+
+        .container { 
+            max-width: 950px; margin: 90px auto 40px auto; padding: 30px 20px; 
+            background: rgba(4, 43, 30, 0.88); border: 2px solid var(--gold); 
+            box-shadow: 0 0 40px rgba(0, 255, 170, 0.2), inset 0 0 25px rgba(212, 175, 55, 0.15); 
+            border-radius: 8px; backdrop-filter: blur(12px);
+        }
+
+        .header-title { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; margin-bottom: 5px; }
+        .subtitle { font-size: 0.85rem; letter-spacing: 2px; color: var(--neon-yellow); margin-bottom: 20px; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
+
+        /* AUDIO PLAYER BACKBONE */
+        .audio-chamber { margin: 15px auto; padding: 10px; background: rgba(2, 26, 18, 0.9); border: 1px solid var(--gold); border-radius: 6px; max-width: 400px; }
+
+        /* VIDEO ARTIFACT CONTAINER */
+        .qr-frame {
+            border: 2px solid var(--gold); padding: 15px; margin: 20px auto; max-width: 320px;
+            background: rgba(2, 26, 18, 0.8); border-radius: 8px; box-shadow: 0 0 25px var(--gold);
+        }
+        .qr-frame video { width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--gold); display: block; }
+
+        /* FLOW GRID */
+        .flow-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 25px 0; }
+        .flow-card { 
+            border: 1px solid var(--gold); background: rgba(2, 26, 18, 0.7); 
+            padding: 15px; border-radius: 6px; min-width: 170px; flex: 1;
+        }
+        .flow-title { font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 8px; }
+        .flow-value { font-size: 1.1rem; color: var(--emerald-liquid); font-weight: bold; }
+
+        /* PATRON CHAMBER */
+        .patron-chamber { 
+            border: 1px solid var(--emerald-liquid); background: rgba(2, 26, 18, 0.9);
+            padding: 25px; margin: 30px 0; border-radius: 8px; text-align: left;
+        }
+        .patron-title { color: var(--gold); letter-spacing: 2px; font-size: 1rem; margin-bottom: 15px; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.75rem; color: var(--gold); margin-bottom: 5px; letter-spacing: 1px; }
+        .form-input, .form-select { 
+            width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid var(--gold); 
+            color: var(--neon-yellow); font-family: 'Cinzel', serif; font-size: 0.9rem; border-radius: 4px;
+        }
+        
+        .btn-action { 
+            width: 100%; padding: 15px; background: var(--gold); color: #000; border: none; 
+            font-family: 'Cinzel', serif; font-weight: bold; letter-spacing: 2px; cursor: pointer; 
+            font-size: 0.85rem; border-radius: 4px; transition: 0.3s; margin-top: 10px;
+        }
+        .btn-action:hover { background: var(--emerald-liquid); box-shadow: 0 0 25px var(--emerald-liquid); }
+
+        /* OBSIDIAN BLACK RECEIPT STYLE WITH GOLDEN TRACKS BORDER */
+        #receipt-modal { 
+            display: none; 
+            background: var(--obsidian-black); 
+            border: 4px double var(--gold); 
+            padding: 30px; 
+            margin-top: 25px; 
+            text-align: center; 
+            color: var(--gold); 
+            border-radius: 8px; 
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+        .receipt-header {
+            font-size: 1.4rem; color: var(--gold); letter-spacing: 4px; font-weight: bold;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6); margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4); padding-bottom: 10px;
+        }
+        .receipt-body { text-align: left; font-size: 0.85rem; line-height: 1.8; margin: 15px 0; color: #fef08a; }
+        
+        /* WET SEAL / MOKRA PECHATKA */
+        .wet-seal {
+            margin: 25px auto 10px auto; width: 140px; height: 140px;
+            border: 2px dashed var(--gold); border-radius: 50%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: rgba(212, 175, 55, 0.05); box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.2);
+            position: relative; transform: rotate(-5deg);
+        }
+        .seal-tree { font-size: 1.8rem; margin-bottom: 2px; }
+        .seal-text { font-size: 0.6rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
+
+        .btn-return { 
+            border: 1px solid var(--gold); color: var(--gold); padding: 14px 30px; 
+            text-decoration: none; display: inline-block; transition: 0.3s; 
+            letter-spacing: 2px; background: transparent; font-weight: bold; 
+            font-size: 0.80rem; margin-top: 25px; text-transform: uppercase;
+        }
+        .btn-return:hover { background: var(--gold); color: #000; box-shadow: 0 0 20px var(--gold); }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            G-MAXI VERIFIED LEDGER • OBSIDIAN SECURE RECEIPTS • SOLI DEO GLORIA • ID: ZI-2026-X • ABSOLUTE INTEGRITY
+        </div>
     </div>
 
-    <div class="form-group">
-        <label>PATRON INITIALS / SYSTEM ID:</label>
-        <input type="text" id="patron-id" class="form-input" placeholder="e.g. STEWARD-777">
-    </div>
-    
-    <div class="form-group">
-        <label>CONTRIBUTION AMOUNT (USD / UAH):</label>
-        <input type="number" id="patron-amount" class="form-input" placeholder="Enter amount..." oninput="calculateFlow()">
+    <div class="container">
+        <h1 class="header-title">G-MAXI AI VERIFIER</h1>
+        <p class="subtitle">LIQUID EMERALD RESOURCE & OBSIDIAN RECEIPT ENGINE</p>
+        <p class="angelic">Soli Deo Gloria</p>
+
+        <!-- AUDIO BACKBONE -->
+        <div class="audio-chamber">
+            <p style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 5px;">SACRED HARMONY BACKBONE</p>
+            <audio controls loop style="width: 100%; filter: sepia(40%) hue-rotate(50deg);">
+                <source src="sacred_choir.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- ANIMATED QR V3 ARTIFACT -->
+        <div class="qr-frame">
+            <video autoplay muted loop playsinline>
+                <source src="YouCut_20261020_162911215.mp4" type="video/mp4">
+            </video>
+            <div style="font-size: 0.7rem; color: var(--gold); margin-top: 10px; letter-spacing: 1px;">VERIFICATION ID: ZI-2026-X</div>
+        </div>
+
+        <!-- LIVE RESOURCE FLOW BOXES -->
+        <div class="flow-grid">
+            <div class="flow-card">
+                <div class="flow-title">TOTAL FLOW</div>
+                <div class="flow-value" id="disp-total">$0.00</div>
+            </div>
+            <div class="flow-card">
+                <div class="flow-title">NEEDY (33%)</div>
+                <div class="flow-value" id="disp-needy">$0.00</div>
+            </div>
+            <div class="flow-card">
+                <div class="flow-title">ECOSYSTEM (33%)</div>
+                <div class="flow-value" id="disp-eco">$0.00</div>
+            </div>
+            <div class="flow-card">
+                <div class="flow-title">FAMILY (33%)</div>
+                <div class="flow-value" id="disp-fam">$0.00</div>
+            </div>
+            <div class="flow-card">
+                <div class="flow-title">DEPOSIT (1%)</div>
+                <div class="flow-value" id="disp-dep">$0.00</div>
+            </div>
+        </div>
+
+        <!-- PATRON & SERVICE CONTRIBUTION FORM -->
+        <div class="patron-chamber">
+            <div class="patron-title">SELECT CONTRIBUTION OR SERVICE BRANCH</div>
+            
+            <div class="form-group">
+                <label>TRANSACTION BRANCH / TYPE:</label>
+                <select id="tx-type" class="form-select">
+                    <option value="service">1. Purchase of Defined Services (Gratitude Receipt)</option>
+                    <option value="patron">2. Sponsorship & Patron Support (Covenant Ledger Receipt)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>BANKING REQUISITES (CONDUIT):</label>
+                <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--gold); padding: 10px; border-radius: 4px; font-size: 0.85rem; color: var(--neon-yellow);">
+                    IBAN / CARD: [ ВСТАВТЕ СВІЙ IBAN АБО НОМЕР КАРТКИ ] | zi.architekt33rd@gmail.com
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>PATRON / CLIENT INITIALS / SYSTEM ID:</label>
+                <input type="text" id="patron-id" class="form-input" placeholder="e.g. STEWARD-777">
+            </div>
+            
+            <div class="form-group">
+                <label>AMOUNT (USD / UAH):</label>
+                <input type="number" id="patron-amount" class="form-input" placeholder="Enter amount..." oninput="calculateFlow()">
+            </div>
+
+            <button class="btn-action" onclick="generateReceipt()">EXECUTE & GENERATE OBSIDIAN ZI-RECEIPT</button>
+
+            <!-- OBSIDIAN RECEIPT MODAL -->
+            <div id="receipt-modal">
+                <div class="receipt-header">LOGOS VOX & ZI+AI</div>
+                <div style="font-size: 0.75rem; letter-spacing: 2px; color: var(--neon-yellow); margin-bottom: 15px;" id="receipt-subtitle-type">OFFICIAL ZI-RECEIPT</div>
+                
+                <div class="receipt-body">
+                    <p><strong>TRANSACTION ID:</strong> <span id="rec-txid"></span></p>
+                    <p><strong>DATE & YEAR:</strong> <span id="rec-date"></span></p>
+                    <p><strong>PATRON / CLIENT ID:</strong> <span id="rec-patron"></span></p>
+                    <p><strong>TOTAL SUM:</strong> <span id="rec-total"></span></p>
+                    <hr style="border-color: rgba(212,175,55,0.3); margin: 10px 0;">
+                    <div id="allocation-details">
+                        <p style="color: #a7f3d0;">• NEEDY SUPPORT (33%): <span id="rec-needy"></span></p>
+                        <p style="color: var(--neon-yellow);">• ECOSYSTEM DEV (33%): <span id="rec-eco"></span></p>
+                        <p style="color: #fde68a;">• FAMILY SUPPORT (33%): <span id="rec-fam"></span></p>
+                        <p style="color: #f59e0b;">• ETERNAL DEPOSIT (1%): <span id="rec-dep"></span></p>
+                    </div>
+                </div>
+
+                <!-- WET SEAL / MOKRA PECHATKA WITH TREE OF LIFE -->
+                <div class="wet-seal">
+                    <div class="seal-tree">🌳</div>
+                    <div class="seal-text">VERIFIED<br><span id="seal-year">2026</span></div>
+                </div>
+
+                <p style="font-size: 0.7rem; color: var(--emerald-liquid); margin-top: 15px; letter-spacing: 2px;">G-MAXI AI VERIFIED | SOLI DEO GLORIA</p>
+                <button onclick="window.print()" style="margin-top: 15px; padding: 10px 25px; background: var(--gold); color: #000; border: none; font-weight: bold; cursor: pointer; border-radius: 4px; letter-spacing: 1px;">PRINT OBSIDIAN RECEIPT</button>
+            </div>
+        </div>
+
+        <a href="sanctuar.html" class="btn-return">RETURN TO SANCTUARY ROOM</a>
     </div>
 
-    <button class="btn-action" onclick="generateReceipt()">EXECUTE TRANSACTION & GENERATE ZI-RECEIPT</button>
+    <script>
+        function calculateFlow() {
+            const val = parseFloat(document.getElementById('patron-amount').value) || 0;
+            document.getElementById('disp-total').innerText = '$' + val.toFixed(2);
+            document.getElementById('disp-needy').innerText = '$' + (val * 0.33).toFixed(2);
+            document.getElementById('disp-eco').innerText = '$' + (val * 0.33).toFixed(2);
+            document.getElementById('disp-fam').innerText = '$' + (val * 0.33).toFixed(2);
+            document.getElementById('disp-dep').innerText = '$' + (val * 0.01).toFixed(2);
+        }
 
-    <div id="receipt-modal">
-        <h3 style="letter-spacing: 3px; border-bottom: 1px solid var(--gold); padding-bottom: 5px; margin-bottom: 10px;">OFFICIAL ZI-STYLE ARCHITECT RECEIPT</h3>
-        <p><strong>TRANSACTION ID:</strong> <span id="rec-txid"></span></p>
-        <p><strong>DATE & TIME:</strong> <span id="rec-date"></span></p>
-        <p><strong>PATRON ID:</strong> <span id="rec-patron"></span></p>
-        <p><strong>TOTAL AMOUNT:</strong> <span id="rec-total"></span></p>
-        <hr style="border-color: rgba(212,175,55,0.3); margin: 10px 0;">
-        <p style="color: #a7f3d0;">• NEEDY SUPPORT (33%): <span id="rec-needy"></span></p>
-        <p style="color: var(--text-gold);">• ECOSYSTEM DEV (33%): <span id="rec-eco"></span></p>
-        <p style="color: #fde68a;">• FAMILY SUPPORT (33%): <span id="rec-fam"></span></p>
-        <p style="color: var(--accent-amber);">• ETERNAL DEPOSIT (1%): <span id="rec-dep"></span></p>
-        <hr style="border-color: rgba(212,175,55,0.3); margin: 10px 0;">
-        <p style="font-size: 0.75rem; text-align: center; color: var(--emerald-liquid);">VERIFIED BY G-MAXI AI | SOLI DEO GLORIA</p>
-        <button onclick="window.print()" style="margin-top: 15px; padding: 8px 20px; background: var(--gold); color: #000; border: none; font-weight: bold; cursor: pointer;">PRINT ELECTRONIC RECEIPT</button>
-    </div>
-</div>
+        function generateReceipt() {
+            const type = document.getElementById('tx-type').value;
+            const patron = document.getElementById('patron-id').value || 'ANONYMOUS CONDUIT';
+            const val = parseFloat(document.getElementById('patron-amount').value) || 0;
+            
+            if (val <= 0) { alert('Please enter a valid amount.'); return; }
+
+            document.getElementById('rec-txid').innerText = 'ZI-TX-' + Math.floor(100000 + Math.random() * 900000);
+            const now = new Date();
+            document.getElementById('rec-date').innerText = now.toUTCString();
+            document.getElementById('seal-year').innerText = now.getFullYear();
+            document.getElementById('rec-patron').innerText = patron;
+            document.getElementById('rec-total').innerText = '$' + val.toFixed(2);
+
+            if (type === 'service') {
+                document.getElementById('receipt-subtitle-type').innerText = 'PURCHASE OF DEFINED SERVICES & GRATITUDE RECEIPT';
+                document.getElementById('allocation-details').style.display = 'none';
+            } else {
+                document.getElementById('receipt-subtitle-type').innerText = 'SPONSORSHIP & PATRON SUPPORT COVENANT RECEIPT';
+                document.getElementById('allocation-details').style.display = 'block';
+                document.getElementById('rec-needy').innerText = '$' + (val * 0.33).toFixed(2);
+                document.getElementById('rec-eco').innerText = '$' + (val * 0.33).toFixed(2);
+                document.getElementById('rec-fam').innerText = '$' + (val * 0.33).toFixed(2);
+                document.getElementById('rec-dep').innerText = '$' + (val * 0.01).toFixed(2);
+            }
+
+            document.getElementById('receipt-modal').style.display = 'block';
+        }
+    </script>
+</body>
+    </html>
+                
