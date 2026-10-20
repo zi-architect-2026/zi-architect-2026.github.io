@@ -45,15 +45,18 @@
         }
 
         .header-title { font-size: 2.2rem; color: var(--gold); letter-spacing: 4px; margin-bottom: 5px; }
-        .subtitle { font-size: 0.85rem; letter-spacing: 2px; color: var(--emerald-liquid); margin-bottom: 25px; }
-        .angelic { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); }
+        .subtitle { font-size: 0.85rem; letter-spacing: 2px; color: var(--emerald-liquid); margin-bottom: 20px; }
+        .angelic { font-family: 'Great Vibes', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
 
-        /* QR V3 ARTIFACT CONTAINER */
+        /* ANIMATED QR V3 VIDEO CONTAINER */
         .qr-frame {
-            border: 2px solid var(--gold); padding: 15px; margin: 20px auto; max-width: 320px;
+            border: 2px solid var(--gold); padding: 15px; margin: 20px auto; max-width: 340px;
             background: rgba(2, 26, 18, 0.8); border-radius: 8px; box-shadow: 0 0 25px var(--gold);
         }
-        .qr-frame img { width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--gold); }
+        .qr-frame video { width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--gold); display: block; }
+
+        /* AUDIO PLAYER BACKBONE */
+        .audio-chamber { margin: 20px auto; padding: 12px; background: rgba(2, 26, 18, 0.9); border: 1px solid var(--gold); border-radius: 6px; max-width: 400px; }
 
         /* DYNAMIC RESOURCE FLOW BOXES */
         .flow-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 25px 0; }
@@ -110,9 +113,21 @@
         <p class="subtitle">LIQUID EMERALD RESOURCE & COVENANT LEDGER</p>
         <p class="angelic">Soli Deo Gloria</p>
 
-        <!-- OFFICIAL QR V3 GRAPEVINE ARTIFACT -->
+        <!-- SACRED CHOIR AUDIO BACKBONE -->
+        <div class="audio-chamber">
+            <p style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 8px;">SACRED HARMONY BACKBONE</p>
+            <audio controls loop style="width: 100%; filter: sepia(40%) hue-rotate(50deg);">
+                <source src="sacred_choir.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- OFFICIAL ANIMATED QR V3 VIDEO ARTIFACT -->
         <div class="qr-frame">
-            <img src="IMG_20261013_221726_990.png" alt="QR V3 Official Portal Verification" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'250\' height=\'250\' viewBox=\'0 0 250 250\'><rect width=\'250\' height=\'250\' fill=\'%23021a12\'/><text x=\'50%\' y=\'50%\' fill=\'%23d4af37\' text-anchor=\'middle\'>QR V3 VERIFIED</text></svg>'">
+            <video autoplay muted loop playsinline>
+                <source src="YouCut_20261020_162911215.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div style="font-size: 0.7rem; color: var(--gold); margin-top: 10px; letter-spacing: 1px;">VERIFICATION ID: ZI-2026-X</div>
         </div>
 
@@ -197,7 +212,7 @@
             document.getElementById('rec-patron').innerText = patron;
             document.getElementById('rec-total').innerText = '$' + val.toFixed(2);
             document.getElementById('rec-needy').innerText = '$' + (val * 0.33).toFixed(2);
-            document.getElementById('rec-eco').innerText = '$' + (val * 0.33).toFixed(2);
+            document.getElementById('rec-eco').innerText = '$' + (val * 0.33).getText ? '$' + (val * 0.33).toFixed(2) : '$' + (val * 0.33).toFixed(2);
             document.getElementById('rec-fam').innerText = '$' + (val * 0.33).toFixed(2);
             document.getElementById('rec-dep').innerText = '$' + (val * 0.01).toFixed(2);
 
